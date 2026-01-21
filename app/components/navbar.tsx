@@ -20,7 +20,7 @@ const Navbar = () => {
           </button>
 
           <Link href="/" className="btn btn-ghost text-xl">
-            daisyUI
+            <p className="text-yellow-400">O2H</p> ✕ <p className="text-purple-500">ANTINRML</p>
           </Link>
         </div>
 
