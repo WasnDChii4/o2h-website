@@ -1,12 +1,12 @@
 import NavbarLayout from "../layouts/NavbarLayout";
 
-const Albums = () => {
+const News = () => {
   return (
     <>
-      <title>Album | O2H Website Center</title>
+      <title>News | O2H Website Center</title>
       <NavbarLayout />
     </>
   )
-}
+} 
 
-export default Albums;
+export default News;
