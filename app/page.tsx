@@ -4,7 +4,7 @@ import O2HImageHero from "../public/img/backgrounds/O2H_ImagesHero_2.jpg";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <title>O2H Website Center</title>
       <Navbar />
       <div className="hero min-h-screen relative overflow-hidden">
@@ -34,6 +34,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,10 +1,10 @@
-import NavbarLayout from "../layouts/NavbarLayout";
+import Navbar from "../components/navbar";
 
 const News = () => {
   return (
     <>
       <title>News | O2H Website Center</title>
-      <NavbarLayout />
+      <Navbar />
     </>
   )
 } 
