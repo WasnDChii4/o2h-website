@@ -1,12 +1,12 @@
 import Image from "next/image";
-import NavbarLayout from "./layouts/NavbarLayout";
+import Navbar from "./components/navbar"; 
 import O2HImageHero from "../public/img/backgrounds/O2H_ImagesHero_2.jpg";
 
 export default function Home() {
   return (
-    <>
+    <div>
       <title>O2H Website Center</title>
-      <NavbarLayout />
+      <Navbar />
       <div className="hero min-h-screen relative overflow-hidden">
         <Image
           src={O2HImageHero}
@@ -34,6 +34,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
