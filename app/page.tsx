@@ -1,6 +1,22 @@
 import Image from "next/image";
-import Navbar from "./components/navbar"; 
+import { Bungee, Playfair_Display } from "next/font/google";
+import Navbar from "./components/navbar";
 import O2HImageHero from "../public/img/backgrounds/O2H_ImagesHero_2.jpg";
+
+const bungee = Bungee({
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const playfairDisplayBold = Playfair_Display({
+  weight: "700",
+  subsets: ["latin"],
+});
+
+const playfairDisplayRegular = Playfair_Display({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function Home() {
   return (
@@ -15,25 +31,39 @@ export default function Home() {
           priority
           className="object-cover"
         />
-
         <div className="hero-overlay bg-opacity-60 z-0" />
-
         <div className="hero-content text-neutral-content text-center z-10">
-          <div className="max-w-lg">
-            <h1 className="mb-5 text-5xl font-bold">Together in Every Step</h1>
-
-            <p className="mb-5">
+          <div className="max-w-2xl">
+            <h1
+              className={`mb-5 text-3xl md:text-5xl font-bold ${bungee.className}`}
+            >
+              Together in Every Step
+            </h1>
+            <p
+              className={`mb-5 md:text-xl ${playfairDisplayRegular.className}`}
+            >
               O2H Website Center yang berisi informasi para member streamer
               dalam komunitas, merch yang sedang di jual dan pre-order, maupun
               info terbaru seputar kegiatan O2H.
             </p>
-
-            <button className="btn bg-yellow-400 text-black font-bold rounded-xl">
+            <button
+              className={`btn bg-yellow-400 text-black font-bold rounded-xl ${bungee.className}`}
+            >
               Let's Eksplore
             </button>
           </div>
         </div>
       </div>
+
+      <section className="py-15">
+        <div className="max-w-7xl mx-auto px-6">
+          <p
+            className={`text-3xl md:text-4xl text-center md:text-left ${playfairDisplayBold.className}`}
+          >
+            Latest News
+          </p>
+        </div>
+      </section>
     </>
   );
 }
