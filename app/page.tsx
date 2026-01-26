@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Bungee, Playfair_Display } from "next/font/google";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 import Navbar from "./components/navbar";
 import O2HImageHero from "../public/img/backgrounds/O2H_ImagesHero_2.jpg";
 
@@ -55,13 +57,22 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="py-15">
+      <section className="py-10">
         <div className="max-w-7xl mx-auto px-6">
-          <p
-            className={`text-3xl md:text-4xl text-center md:text-left ${playfairDisplayBold.className}`}
-          >
-            Latest News
-          </p>
+          <div className="flex items-center justify-between mb-10">
+            <h1
+              className={`text-3xl md:text-4xl text-center md:text-left ${playfairDisplayBold.className}`}
+            >
+              Latest News
+            </h1>
+            <Link
+              href="/news"
+              className={`flex items-center gap-2 text-sm md:text-base opacity-50 hover:opacity-100 transition leading-none ${playfairDisplayRegular.className}`}
+            >
+              View More
+              <FaArrowAltCircleRight size={20} className="translate-y-px" />
+            </Link>
+          </div>
         </div>
       </section>
     </>

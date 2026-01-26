@@ -5,8 +5,19 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
+import { Playfair_Display } from "next/font/google";
 import AvatarSementara from "../../public/img/backgrounds/O2H_ImagesHero_2.jpg";
 import O2HLogo from "../../public/img/logos/O2H_Logos_1.png";
+
+const playfairDisplayRegular = Playfair_Display({
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const playfairDisplayBold = Playfair_Display({
+  weight: "700",
+  subsets: ["latin"],
+});
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -71,16 +82,31 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="dropdown-content menu p-2 shadow bg-yellow-50 text-black rounded-box w-40 mt-3"
+              className="dropdown-content menu p-2 shadow bg-yellow-50 text-black rounded-tl-lg rounded-bl-lg rounded-br-lg w-40 mt-3"
             >
               <li>
-                <Link href="#">Profile</Link>
+                <Link
+                  href="#"
+                  className="hover:bg-yellow-400 hover:text-black transition"
+                >
+                  Profile
+                </Link>
               </li>
               <li>
-                <Link href="#">Settings</Link>
+                <Link
+                  href="#"
+                  className="hover:bg-yellow-400 hover:text-black transition"
+                >
+                  Settings
+                </Link>
               </li>
               <li>
-                <Link href="#">Logout</Link>
+                <Link
+                  href="#"
+                  className="hover:bg-yellow-400 hover:text-black transition"
+                >
+                  Logout
+                </Link>
               </li>
             </ul>
           </div>
@@ -99,15 +125,17 @@ const Navbar = () => {
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex items-center gap-4 px-4 py-3 border-b border-yellow-400">
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-yellow-400 leading-none">
           <button
             onClick={() => setOpen(false)}
             aria-label="Close menu"
-            className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-yellow-400 active:bg-yellow-500 focus:outline-none transition text-xl font-bold"
+            className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-yellow-400 active:bg-yellow-500 focus:outline-none transition text-lg font-bold"
           >
             ✕
           </button>
-          <span className="font-bold text-lg">Menu</span>
+          <span className={`text-2xl ${playfairDisplayBold.className}`}>
+            Menu
+          </span>
         </div>
         <div className="p-4 lg:hidden">
           <div className="flex">
@@ -121,7 +149,9 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        <ul className="menu p-3 space-y-3 w-full">
+        <ul
+          className={`menu p-3 space-y-3 w-full text-base ${playfairDisplayRegular.className}`}
+        >
           <li>
             <Link
               href="/"
