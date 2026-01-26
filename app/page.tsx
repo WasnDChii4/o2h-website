@@ -35,7 +35,7 @@ export default function Home() {
         <div className="hero-content text-neutral-content text-center z-10">
           <div className="max-w-2xl">
             <h1
-              className={`mb-5 text-3xl md:text-5xl font-bold ${bungee.className}`}
+              className={`mb-5 text-4xl md:text-5xl font-bold ${bungee.className}`}
             >
               Together in Every Step
             </h1>
