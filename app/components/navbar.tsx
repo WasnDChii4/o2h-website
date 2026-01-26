@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
+import { IoIosNotifications } from "react-icons/io";
 import AvatarSementara from "../../public/img/backgrounds/O2H_ImagesHero_2.jpg";
 import O2HLogo from "../../public/img/logos/O2H_Logos_1.png";
 
@@ -13,7 +14,7 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar shadow-sm fixed top-0 z-30 bg-yellow-400 text-black">
-        <div className="navbar-start gap-3 px-3">
+        <div className="navbar-start gap-0.5">
           <button
             onClick={() => setOpen(true)}
             aria-label="Open menu"
@@ -34,7 +35,6 @@ const Navbar = () => {
               />
             </svg>
           </button>
-
           <Link href="/">
             <Image alt="" src={O2HLogo} width={48} height={48} priority />
           </Link>
@@ -53,11 +53,13 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="navbar-end gap-3">
+        <div className="navbar-end gap-0.5">
           <button className="p-2 rounded-full hover:bg-yellow-300 active:bg-yellow-500 focus:outline-none transition">
             <FaShoppingCart size={24} />
           </button>
-
+          <button className="p-2 rounded-full hover:bg-yellow-300 active:bg-yellow-500 focus:outline-none transition">
+            <IoIosNotifications size={28} />
+          </button>
           <div className="dropdown dropdown-end">
             <label
               tabIndex={0}
@@ -67,7 +69,6 @@ const Navbar = () => {
                 <Image alt="Avatar Player" src={AvatarSementara} />
               </div>
             </label>
-
             <ul
               tabIndex={0}
               className="dropdown-content menu p-2 shadow bg-yellow-50 text-black rounded-box w-40 mt-3"
@@ -108,7 +109,6 @@ const Navbar = () => {
           </button>
           <span className="font-bold text-lg">Menu</span>
         </div>
-
         <div className="p-4 lg:hidden">
           <div className="flex">
             <input
@@ -121,7 +121,6 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-
         <ul className="menu p-3 space-y-3 w-full">
           <li>
             <Link
