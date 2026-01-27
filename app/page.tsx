@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { headers } from "next/headers";
 import { Bungee, Playfair_Display } from "next/font/google";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import Navbar from "./components/navbar";
@@ -28,12 +29,18 @@ const playfairDisplayRegular = Playfair_Display({
 });
 
 export default async function Home() {
-  const res = await fetch("http://localhost:3000/api/news", {
+  const headersList = await headers();
+  const host = headersList.get("host");
+
+  const res = await fetch(`http://${host}/api/news`, {
     cache: "no-store",
   });
 
-  const newsData: News[] = await res.json();
+  if (!res.ok) {
+    throw new Error("Failed to fetch news");
+  }
 
+  const newsData: News[] = await res.json();
   const latestNews = newsData.slice(0, 3);
 
   return (
