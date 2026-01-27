@@ -5,6 +5,13 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 import Navbar from "./components/navbar";
 import O2HImageHero from "../public/img/backgrounds/O2H_ImagesHero_2.jpg";
 
+type News = {
+  id: number;
+  date: string;
+  title: string;
+  slug: string;
+};
+
 const bungee = Bungee({
   weight: "400",
   subsets: ["latin"],
@@ -20,7 +27,15 @@ const playfairDisplayRegular = Playfair_Display({
   subsets: ["latin"],
 });
 
-export default function Home() {
+export default async function Home() {
+  const res = await fetch("http://localhost:3000/api/news", {
+    cache: "no-store",
+  });
+
+  const newsData: News[] = await res.json();
+
+  const latestNews = newsData.slice(0, 3);
+
   return (
     <>
       <title>O2H Website Center</title>
@@ -72,6 +87,36 @@ export default function Home() {
               View More
               <FaArrowAltCircleRight size={20} className="translate-y-px" />
             </Link>
+          </div>
+          <div className="divide-y divide-white/20">
+            {latestNews.map((news) => (
+              <Link
+                key={news.id}
+                href={news.slug}
+                className="group flex flex-col md:flex-row md:items-center gap-2 md:gap-6 py-6 md:py-8 transition hover:no-underline"
+              >
+                <span
+                  className={`text-sm md:text-base group-hover:opacity-50 md:w-28 md:shrink-0
+                  ${playfairDisplayRegular.className}
+                `}
+                >
+                  {news.date}
+                </span>
+                <p
+                  className={`flex-1 text-base md:text-lg group-hover:opacity-50 leading-relaxed
+                    ${playfairDisplayRegular.className}
+                  `}
+                >
+                  {news.title}
+                </p>
+                <div className="self-end md:self-auto mt-2 md:mt-0">
+                  <FaArrowAltCircleRight
+                    size={24}
+                    className="group-hover:opacity-50 transition"
+                  />
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

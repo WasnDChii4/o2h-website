@@ -82,7 +82,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="dropdown-content menu p-2 shadow bg-yellow-50 text-black rounded-tl-lg rounded-bl-lg rounded-br-lg w-40 mt-3"
+              className={`dropdown-content menu p-2 shadow bg-yellow-50 text-black rounded-tl-lg rounded-bl-lg rounded-br-lg w-40 mt-3 ${playfairDisplayRegular.className}`}
             >
               <li>
                 <Link
@@ -125,7 +125,7 @@ const Navbar = () => {
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex items-center gap-2 px-4 py-3 border-b border-yellow-400 leading-none">
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-yellow-400">
           <button
             onClick={() => setOpen(false)}
             aria-label="Close menu"
