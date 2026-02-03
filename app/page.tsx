@@ -1,16 +1,8 @@
 import Image from "next/image";
-import { headers } from "next/headers";
 import { Bungee, Playfair_Display } from "next/font/google";
 import Navbar from "./components/navbar";
 import LatestNews from "./components/LastestNews";
 import O2HImageHero from "../public/img/backgrounds/O2H_ImagesHero_2.jpg";
-
-type News = {
-  id: number;
-  date: string;
-  title: string;
-  slug: string;
-};
 
 const bungee = Bungee({
   weight: "400",
@@ -23,24 +15,9 @@ const playfairDisplayRegular = Playfair_Display({
 });
 
 export default async function Home() {
-  const headersList = await headers();
-  const host = headersList.get("host");
-
-  const res = await fetch(`http://${host}/api/news`, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch news");
-  }
-
-  const newsData: News[] = await res.json();
-  const latestNews = newsData.slice(0, 3);
-
   return (
     <>
       <title>O2H Website Center</title>
-
       <Navbar />
       <div className="hero min-h-screen relative overflow-hidden">
         <Image
@@ -74,7 +51,7 @@ export default async function Home() {
         </div>
       </div>
 
-      <LatestNews news={latestNews} />
+      <LatestNews />
     </>
   );
 }
