@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Bungee, Playfair_Display } from "next/font/google";
 import Navbar from "./components/navbar";
 import LatestNews from "./components/LastestNews";
+import AlbumsCarousel from "./components/AlbumsCarousel";
 import O2HImageHero from "../public/img/backgrounds/O2H_ImagesHero_2.jpg";
 
 const bungee = Bungee({
@@ -52,6 +53,8 @@ export default async function Home() {
       </div>
 
       <LatestNews />
+
+      <AlbumsCarousel />
     </>
   );
 }
