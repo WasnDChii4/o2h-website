@@ -1,4 +1,5 @@
 import { Playfair_Display } from "next/font/google";
+import CardStackCarousel from "./CardStackCarousel";
 
 const playfairDisplayBold = Playfair_Display({
   weight: "700",
@@ -20,9 +21,8 @@ const AlbumsCarousel = () => {
           >
             Albums
           </h1>
-
-          
         </div>
+        <CardStackCarousel />
       </div>
     </section>
   );
