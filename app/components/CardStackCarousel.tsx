@@ -17,19 +17,19 @@ const CardStackCarousel = () => {
       >
         <SwiperSlide>
           <div className="h-full rounded-xl bg-white text-black p-6">
-            <h1 className="text-4xl font-bold">Image 1</h1>
+            <h1 className="text-2xl font-bold">Image 1</h1>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div className="h-full rounded-xl bg-white text-black p-6">
-            <h1 className="text-4xl font-bold">Image 2</h1>
+            <h1 className="text-2xl font-bold">Image 2</h1>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div className="h-full rounded-xl bg-white text-black p-6">
-            <h1 className="text-4xl font-bold">Image 3</h1>
+            <h1 className="text-2xl font-bold">Image 3</h1>
           </div>
         </SwiperSlide>
       </Swiper>
