@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
 
@@ -17,19 +18,37 @@ const CardStackCarousel = () => {
       >
         <SwiperSlide>
           <div className="h-full rounded-xl bg-white text-black p-6">
-            <h1 className="text-2xl font-bold">Image 1</h1>
+            <Image
+              src="/img/albums/O2H_1.jpg"
+              alt="O2H Album 1"
+              fill
+              className="rounded-xl"
+              priority
+            />
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div className="h-full rounded-xl bg-white text-black p-6">
-            <h1 className="text-2xl font-bold">Image 2</h1>
+            <Image
+              src="/img/albums/O2H_2.jpg"
+              alt="O2H Album 1"
+              fill
+              className="rounded-xl"
+              priority
+            />
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div className="h-full rounded-xl bg-white text-black p-6">
-            <h1 className="text-2xl font-bold">Image 3</h1>
+            <Image
+              src="/img/albums/O2H_4.jpg"
+              alt="O2H Album 1"
+              fill
+              className="rounded-xl"
+              priority
+            />
           </div>
         </SwiperSlide>
       </Swiper>

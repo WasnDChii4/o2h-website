@@ -3,7 +3,6 @@ import { Bungee, Playfair_Display } from "next/font/google";
 import Navbar from "./components/navbar";
 import LatestNews from "./components/LastestNews";
 import AlbumsCarousel from "./components/AlbumsCarousel";
-import O2HImageHero from "../public/img/backgrounds/O2H_ImagesHero_2.jpg";
 
 const bungee = Bungee({
   weight: "400",
@@ -22,7 +21,7 @@ export default async function Home() {
       <Navbar />
       <div className="hero min-h-screen relative overflow-hidden">
         <Image
-          src={O2HImageHero}
+          src="/img/backgrounds/O2H_ImagesHero_2.jpg"
           alt="Hero background"
           fill
           priority
