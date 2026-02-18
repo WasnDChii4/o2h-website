@@ -16,40 +16,34 @@ const CardStackCarousel = () => {
         modules={[EffectCards]}
         className="w-[85%] max-w-4xl aspect-video"
       >
-        <SwiperSlide>
-          <div className="h-full rounded-xl bg-white text-black p-6">
-            <Image
-              src="/img/albums/O2H_1.jpg"
-              alt="O2H Album 1"
-              fill
-              className="rounded-xl"
-              priority
-            />
-          </div>
+        <SwiperSlide className="bg-white rounded-xl">
+          <Image
+            src="/img/albums/O2H_1.jpg"
+            alt="O2H Album 1"
+            fill
+            className="rounded-xl object-cover"
+            priority
+          />
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="h-full rounded-xl bg-white text-black p-6">
-            <Image
-              src="/img/albums/O2H_2.jpg"
-              alt="O2H Album 1"
-              fill
-              className="rounded-xl"
-              priority
-            />
-          </div>
+          <Image
+            src="/img/albums/O2H_2.jpg"
+            alt="O2H Album 1"
+            fill
+            className="rounded-xl object-cover"
+            priority
+          />
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="h-full rounded-xl bg-white text-black p-6">
-            <Image
-              src="/img/albums/O2H_4.jpg"
-              alt="O2H Album 1"
-              fill
-              className="rounded-xl"
-              priority
-            />
-          </div>
+          <Image
+            src="/img/albums/O2H_4.jpg"
+            alt="O2H Album 1"
+            fill
+            className="rounded-xl object-cover"
+            priority
+          />
         </SwiperSlide>
       </Swiper>
     </div>
