@@ -28,8 +28,8 @@ export default function Hero() {
         alt="Hero background"
         fill
         priority
-        className={`object-cover transition-all duration-700 ease-in-out ${
-          isMounted ? "blur-0 scale-100" : "blur-md scale-105"
+        className={`object-cover transition-all duration-2000 ease-in-out ${
+          isMounted ? "blur-0 scale-100" : "blur-xl scale-105"
         }`}
       />
 
