@@ -54,7 +54,7 @@ const LatestNews = async () => {
           </Link>
         </div>
 
-        <div className="divide-y divide-white/20">
+        <div className="divide-y divide-white/30">
           {latestNews.map((news) => (
             <Link
               key={news.id}
