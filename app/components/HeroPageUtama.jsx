@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Bungee, Playfair_Display } from "next/font/google";
 
@@ -15,7 +15,11 @@ const playfairDisplayRegular = Playfair_Display({
 });
 
 export default function Hero() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <div className="hero min-h-screen relative overflow-hidden">
@@ -24,9 +28,8 @@ export default function Hero() {
         alt="Hero background"
         fill
         priority
-        onLoadingComplete={() => setIsLoading(false)}
         className={`object-cover transition-all duration-700 ease-in-out ${
-          isLoading ? "blur-md scale-105" : "blur-0 scale-100"
+          isMounted ? "blur-0 scale-100" : "blur-md scale-105"
         }`}
       />
 
