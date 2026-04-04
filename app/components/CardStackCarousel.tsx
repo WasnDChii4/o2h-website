@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCards } from "swiper/modules";
+import { EffectCards, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/effect-cards";
+import "swiper/css/pagination";
 
 const CardStackCarousel = () => {
   return (
@@ -13,7 +14,8 @@ const CardStackCarousel = () => {
       <Swiper
         effect="cards"
         grabCursor={true}
-        modules={[EffectCards]}
+        modules={[EffectCards, Pagination]}
+        pagination={{ clickable: true }}
         className="w-[85%] max-w-4xl aspect-square md:aspect-video"
       >
         <SwiperSlide className="bg-white rounded-xl">
