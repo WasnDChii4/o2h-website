@@ -14,7 +14,7 @@ const CardStackCarousel = () => {
         effect="cards"
         grabCursor={true}
         modules={[EffectCards]}
-        className="w-[85%] max-w-4xl aspect-video"
+        className="w-[85%] max-w-4xl aspect-square md:aspect-video"
       >
         <SwiperSlide className="bg-white rounded-xl">
           <Image
