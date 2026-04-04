@@ -10,44 +10,49 @@ import "swiper/css/pagination";
 
 const CardStackCarousel = () => {
   return (
-    <div className="w-full flex justify-center py-3">
+    <div className="w-full flex flex-col items-center py-3">
       <Swiper
         effect="cards"
         grabCursor={true}
         modules={[EffectCards, Pagination]}
-        pagination={{ clickable: true }}
+        pagination={{
+          el: ".custom-pagination",
+          clickable: true,
+        }}
         className="w-[85%] max-w-4xl aspect-square md:aspect-video"
       >
-        <SwiperSlide className="bg-white rounded-xl">
+        <SwiperSlide className="relative rounded-xl overflow-hidden">
           <Image
             src="/img/albums/O2H_1.jpg"
             alt="O2H Album 1"
             fill
-            className="rounded-xl object-cover"
+            className="object-cover"
             priority
           />
         </SwiperSlide>
 
-        <SwiperSlide>
+        <SwiperSlide className="relative rounded-xl overflow-hidden">
           <Image
             src="/img/albums/O2H_2.jpg"
-            alt="O2H Album 1"
+            alt="O2H Album 2"
             fill
-            className="rounded-xl object-cover"
+            className="object-cover"
             priority
           />
         </SwiperSlide>
 
-        <SwiperSlide>
+        <SwiperSlide className="relative rounded-xl overflow-hidden">
           <Image
             src="/img/albums/O2H_4.jpg"
-            alt="O2H Album 1"
+            alt="O2H Album 3"
             fill
-            className="rounded-xl object-cover"
+            className="object-cover"
             priority
           />
         </SwiperSlide>
       </Swiper>
+
+      <div className="custom-pagination mt-7"></div>
     </div>
   );
 };
