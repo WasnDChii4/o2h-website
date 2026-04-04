@@ -21,32 +21,32 @@ const CardStackCarousel = () => {
         }}
         className="w-[85%] max-w-4xl aspect-square md:aspect-video"
       >
-        <SwiperSlide className="relative rounded-xl overflow-hidden">
+        <SwiperSlide className="relative rounded-xl overflow-hidden group">
           <Image
             src="/img/albums/O2H_1.jpg"
             alt="O2H Album 1"
             fill
-            className="object-cover"
+            className="object-cover transition duration-300 group-hover:opacity-50"
             priority
           />
         </SwiperSlide>
 
-        <SwiperSlide className="relative rounded-xl overflow-hidden">
+        <SwiperSlide className="relative rounded-xl overflow-hidden group">
           <Image
             src="/img/albums/O2H_2.jpg"
             alt="O2H Album 2"
             fill
-            className="object-cover"
+            className="object-cover transition duration-300 group-hover:opacity-50"
             priority
           />
         </SwiperSlide>
 
-        <SwiperSlide className="relative rounded-xl overflow-hidden">
+        <SwiperSlide className="relative rounded-xl overflow-hidden group">
           <Image
             src="/img/albums/O2H_4.jpg"
             alt="O2H Album 3"
             fill
-            className="object-cover"
+            className="object-cover transition duration-300 group-hover:opacity-50"
             priority
           />
         </SwiperSlide>
