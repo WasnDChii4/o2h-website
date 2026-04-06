@@ -45,7 +45,7 @@ export default function Hero() {
             dalam komunitas, merch yang sedang di jual dan pre-order, maupun
             info terbaru seputar kegiatan O2H.
           </p>
-          <button className={`btn bg-yellow-400 text-black font-bold rounded-xl ${bungee.className}`}>
+          <button className={`btn bg-yellow-400 hover:bg-yellow-500 active:bg-yellow-600 text-black font-bold rounded-xl ${bungee.className}`}>
             Let's Eksplore
           </button>
         </div>
