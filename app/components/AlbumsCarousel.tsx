@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 import { Playfair_Display } from "next/font/google";
 import CardStackCarousel from "./CardStackCarousel";
 
@@ -21,6 +23,13 @@ const AlbumsCarousel = () => {
           >
             Albums
           </h1>
+          <Link 
+            href="/photobooks"
+            className={`flex items-center gap-2 text-sm md:text-base opacity-50 hover:opacity-100 transition leading-none ${playfairDisplayRegular.className}`}
+          >
+            View More
+            <FaArrowAltCircleRight size={20} className="translate-y-px" />
+          </Link>
         </div>
         <CardStackCarousel />
       </div>
