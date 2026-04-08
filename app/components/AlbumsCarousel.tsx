@@ -23,7 +23,7 @@ const AlbumsCarousel = () => {
           >
             Albums
           </h1>
-          <Link 
+          <Link
             href="/photobooks"
             className={`flex items-center gap-2 text-sm md:text-base opacity-50 hover:opacity-100 transition leading-none ${playfairDisplayRegular.className}`}
           >
