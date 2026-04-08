@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/effect-cards";
+import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 const CardStackCarousel = () => {
@@ -14,7 +14,11 @@ const CardStackCarousel = () => {
       <Swiper
         effect="coverflow"
         grabCursor={true}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[EffectCoverflow, Pagination, Autoplay]}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
         pagination={{
           el: ".custom-pagination",
           clickable: true,
