@@ -2,7 +2,7 @@ import Navbar from "./components/client/navbar";
 import LatestNews from "./components/LastestNews";
 import AlbumsCarousel from "./components/AlbumsCarousel";
 import Hero from "./components/client/HeroPageUtama";
-import StoreScreen from "./components/StorePage";
+import StorePageCard from "./components/StorePageCard";
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
       <LatestNews />
       <AlbumsCarousel />
-      <StoreScreen />
+      <StorePageCard />
     </>
   );
 }

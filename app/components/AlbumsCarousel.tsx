@@ -15,9 +15,9 @@ const playfairDisplayRegular = Playfair_Display({
 
 export default function  AlbumsCarousel() {
   return (
-    <section className="py-7">
+    <section className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between mb-10">
+        <div className="flex items-center justify-between mb-10 text-black">
           <h1
             className={`text-3xl md:text-4xl text-center md:text-left ${playfairDisplayBold.className}`}
           >
