@@ -6,8 +6,8 @@ import { useState } from "react";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
 import { Playfair_Display } from "next/font/google";
-import AvatarSementara from "../../public/img/backgrounds/O2H_ImagesHero_2.jpg";
-import O2HLogo from "../../public/img/logos/O2H_Logos_1.png";
+import AvatarSementara from "../../../public/img/backgrounds/O2H_ImagesHero_2.jpg";
+import O2HLogo from "../../../public/img/logos/O2H_Logos_1.png";
 
 const playfairDisplayRegular = Playfair_Display({
   weight: "400",
@@ -19,7 +19,7 @@ const playfairDisplayBold = Playfair_Display({
   subsets: ["latin"],
 });
 
-const Navbar = () => {
+export default function  Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -193,5 +193,3 @@ const Navbar = () => {
     </>
   );
 };
-
-export default Navbar;

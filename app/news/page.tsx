@@ -1,6 +1,6 @@
-import Navbar from "../components/navbar";
+import Navbar from "../components/client/navbar";
 
-const News = () => {
+export default function News() {
   return (
     <>
       <title>News | O2H Website Center</title>
@@ -8,5 +8,3 @@ const News = () => {
     </>
   )
 } 
-
-export default News;

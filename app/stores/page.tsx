@@ -1,6 +1,6 @@
-import Navbar from "../components/navbar";
+import Navbar from "../components/client/navbar";
 
-const Stores = () => {
+export default function Stores() {
   return (
     <>
       <title>Store | O2H Website Center</title>
@@ -8,5 +8,3 @@ const Stores = () => {
     </>
   );
 };
-
-export default Stores;

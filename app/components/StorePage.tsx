@@ -11,7 +11,7 @@ const playfairDisplayRegular = Playfair_Display({
   subsets: ["latin"],
 });
 
-const StoreScreen = () => {
+export default async function StoreScreen() {
   return (
     <section className="py-10">
       <div className="max-w-7xl mx-auto px-6">
@@ -22,10 +22,8 @@ const StoreScreen = () => {
             Store
           </h1>
         </div>
-        <div></div>
+        
       </div>
     </section>
   );
 };
-
-export default StoreScreen;

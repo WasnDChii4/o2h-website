@@ -20,7 +20,7 @@ const playfairDisplayRegular = Playfair_Display({
   subsets: ["latin"],
 });
 
-const LatestNews = async () => {
+export default async function LatestNews() {
   const headersList = await headers();
   const host = headersList.get("host");
 
@@ -86,5 +86,3 @@ const LatestNews = async () => {
     </section>
   );
 };
-
-export default LatestNews;

@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-const ImageSlide = () => {
+export default function ImageSlide() {
   return (
     <div className="w-full flex flex-col items-center py-3">
       <Swiper
@@ -61,5 +61,3 @@ const ImageSlide = () => {
     </div>
   );
 };
-
-export default ImageSlide;

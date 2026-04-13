@@ -1,12 +1,10 @@
-import Navbar from "../components/navbar";
+import Navbar from "../components/client/navbar";
 
-const Photobooks = () => {
+export default function Photobooks() {
   return (
     <>
       <title>Photobooks | O2H Website Center</title>
       <Navbar />
     </>
   )
-}
-
-export default Photobooks;
+};

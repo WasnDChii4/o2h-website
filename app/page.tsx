@@ -1,8 +1,8 @@
-import Navbar from "./components/navbar";
+import Navbar from "./components/client/navbar";
 import LatestNews from "./components/LastestNews";
 import AlbumsCarousel from "./components/AlbumsCarousel";
-import Hero from "./components/HeroPageUtama";
-import StoreScreen from "./components/StoreScreen";
+import Hero from "./components/client/HeroPageUtama";
+import StoreScreen from "./components/StorePage";
 
 export default function Home() {
   return (

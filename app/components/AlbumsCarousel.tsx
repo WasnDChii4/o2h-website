@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { Playfair_Display } from "next/font/google";
-import ImageSlide from "./ImageSlide";
+import ImageSlide from "./client/ImageSlide";
 
 const playfairDisplayBold = Playfair_Display({
   weight: "700",
@@ -13,7 +13,7 @@ const playfairDisplayRegular = Playfair_Display({
   subsets: ["latin"],
 });
 
-const AlbumsCarousel = () => {
+export default function  AlbumsCarousel() {
   return (
     <section className="py-7">
       <div className="max-w-7xl mx-auto px-6">
@@ -36,5 +36,3 @@ const AlbumsCarousel = () => {
     </section>
   );
 };
-
-export default AlbumsCarousel;
