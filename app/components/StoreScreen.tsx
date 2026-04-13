@@ -22,7 +22,6 @@ const StoreScreen = () => {
             Store
           </h1>
         </div>
-
         <div></div>
       </div>
     </section>
