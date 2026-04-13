@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { Playfair_Display } from "next/font/google";
-import CardStackCarousel from "./CardStackCarousel";
+import ImageSlide from "./ImageSlide";
 
 const playfairDisplayBold = Playfair_Display({
   weight: "700",
@@ -31,7 +31,7 @@ const AlbumsCarousel = () => {
             <FaArrowAltCircleRight size={20} className="translate-y-px" />
           </Link>
         </div>
-        <CardStackCarousel />
+        <ImageSlide />
       </div>
     </section>
   );
