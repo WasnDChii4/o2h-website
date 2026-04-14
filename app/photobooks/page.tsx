@@ -1,4 +1,4 @@
-import Navbar from "../components/client/navbar";
+import Navbar from "../components/client/NavbarClient";
 
 export default function Photobooks() {
   return (

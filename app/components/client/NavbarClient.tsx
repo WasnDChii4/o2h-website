@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
 import { Playfair_Display } from "next/font/google";
@@ -19,8 +20,23 @@ const playfairDisplayBold = Playfair_Display({
   subsets: ["latin"],
 });
 
-export default function  Navbar() {
+export default function NavbarClient({ products }: any) {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
+
+  const [inputValue, setinputValue] = useState("");
+
+  const handleSearch = () => {
+    if (!inputValue.trim()) return;
+
+    router.push(`/search?keyword=${encodeURIComponent(inputValue)}`);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
 
   return (
     <>
@@ -56,9 +72,15 @@ export default function  Navbar() {
             <input
               type="text"
               placeholder="Telusuri..."
+              value={inputValue}
+              onChange={(e) => setinputValue(e.target.value)}
+              onKeyDown={handleKeyDown}
               className=" input w-full rounded-l-full bg-yellow-100 border border-yellow-500/30 focus:border-yellow-600 focus:outline-none"
             />
-            <button className=" px-5 rounded-r-full bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 border border-yellow-500/30 transition">
+            <button
+              onClick={handleSearch}
+              className=" px-5 rounded-r-full bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 border border-yellow-500/30 transition"
+            >
               <FaSearch size={20} />
             </button>
           </div>
@@ -141,10 +163,16 @@ export default function  Navbar() {
           <div className="flex">
             <input
               type="text"
-              placeholder="Telusuri"
+              placeholder="Telusuri..."
+              value={inputValue}
+              onChange={(e) => setinputValue(e.target.value)}
+              onKeyDown={handleKeyDown}
               className="input w-full rounded-l-full bg-yellow-100 border border-yellow-400/40 focus:outline-none"
             />
-            <button className="px-4 rounded-r-full bg-yellow-400 hover:bg-yellow-500">
+            <button
+              onClick={handleSearch}
+              className="px-4 rounded-r-full bg-yellow-400 hover:bg-yellow-500"
+            >
               <FaSearch size={18} />
             </button>
           </div>
@@ -192,4 +220,4 @@ export default function  Navbar() {
       </aside>
     </>
   );
-};
+}

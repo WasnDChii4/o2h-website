@@ -1,4 +1,4 @@
-import Navbar from "./components/client/navbar";
+import NavbarClient from "./components/client/NavbarClient";
 import LatestNews from "./components/LastestNews";
 import AlbumsCarousel from "./components/AlbumsCarousel";
 import Hero from "./components/client/HeroPageUtama";
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <title>O2H Website Center</title>
-      <Navbar />
+      <NavbarClient />
       <Hero />
       <LatestNews />
       <AlbumsCarousel />

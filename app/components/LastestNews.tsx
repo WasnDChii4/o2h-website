@@ -85,4 +85,4 @@ export default async function LatestNews() {
       </div>
     </section>
   );
-};
+}
