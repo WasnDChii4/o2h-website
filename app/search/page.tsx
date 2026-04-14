@@ -145,13 +145,15 @@ export default async function SearchPage({
                   height={300}
                   className="w-full h-40 object-cover rounded"
                 />
-                <p
-                  className={`text-sm mt-2 line-clamp-2 text-black ${playfairDisplayBold.className}`}
-                >
-                  {p.title}
-                </p>
-                <p className="text-yellow-500 mt-1 font-semibold">{p.price}</p>
-                <p className="text-xs text-gray-500">{p.sold}</p>
+                <div className="border-t border-yellow-400 my-3">
+                  <p
+                    className={`text-sm mt-2 line-clamp-2 text-black ${playfairDisplayBold.className}`}
+                  >
+                    {p.title}
+                  </p>
+                  <p className="text-yellow-500 mt-1 font-semibold">{p.price}</p>
+                  <p className="text-xs text-gray-500">{p.sold}</p>
+                </div>
               </div>
             ))
           ) : (
