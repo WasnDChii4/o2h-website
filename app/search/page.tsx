@@ -127,7 +127,7 @@ export default async function SearchPage({
     <section>
       <NavbarClient defaultSearch={keyword} />
       <div className="my-20 m-5 md:m-20">
-        <h1 className={`text-lg mb-4 ${playfairDisplayRegular.className}`}>
+        <h1 className={`text-lg my-7 ${playfairDisplayRegular.className}`}>
           Hasil pencarian: "{keyword}"
         </h1>
 
