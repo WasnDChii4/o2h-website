@@ -130,7 +130,7 @@ export default async function SearchPage({
               <div key={p.id} className="bg-white rounded-md shadow-white hover:shadow-lg transition p-2 cursor-pointer   ">
                 <Image src={p.image} alt={p.title} width={300} height={300} className="w-full h-40 object-cover rounded" />
                 <p className={`text-sm mt-2 line-clamp-2 text-black ${playfairDisplayBold.className}`}>{p.title}</p>
-                <p className="text-orange-500">{p.price}</p>
+                <p className="text-yellow-500 mt-1 font-semibold">{p.price}</p>
                 <p className="text-xs text-gray-500">{p.sold}</p>
               </div>
             ))
