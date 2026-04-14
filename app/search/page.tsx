@@ -7,6 +7,11 @@ const playfairDisplayBold = Playfair_Display({
   subsets: ["latin"],
 });
 
+const playfairDisplayRegular = Playfair_Display({
+  weight: "400",
+  subsets: ["latin"],
+});
+
 interface Product {
   id: number;
   title: string;
@@ -120,9 +125,9 @@ export default async function SearchPage({
 
   return (
     <section>
-      <NavbarClient />
+      <NavbarClient defaultSearch={keyword} />
       <div className="my-20 m-5 md:m-20">
-        <h1 className="text-lg font-semibold mb-4">
+        <h1 className={`text-lg mb-4 ${playfairDisplayRegular.className}`}>
           Hasil pencarian: "{keyword}"
         </h1>
 
@@ -140,7 +145,9 @@ export default async function SearchPage({
                   height={300}
                   className="w-full h-40 object-cover rounded"
                 />
-                <p className={`text-sm mt-2 line-clamp-2 text-black ${playfairDisplayBold.className}`}>
+                <p
+                  className={`text-sm mt-2 line-clamp-2 text-black ${playfairDisplayBold.className}`}
+                >
                   {p.title}
                 </p>
                 <p className="text-yellow-500 mt-1 font-semibold">{p.price}</p>
@@ -148,9 +155,7 @@ export default async function SearchPage({
               </div>
             ))
           ) : (
-            <p className="col-span-full text-center">
-              Produk tidak ditemukan
-            </p>
+            <p className={`col-span-full flex justify-center items-center min-h-[60vh] text-2xl ${playfairDisplayBold.className}`}>Produk tidak ditemukan</p>
           )}
         </div>
       </div>

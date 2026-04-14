@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
@@ -20,11 +20,11 @@ const playfairDisplayBold = Playfair_Display({
   subsets: ["latin"],
 });
 
-export default function NavbarClient({ products }: any) {
+export default function NavbarClient({ defaultSearch = "" }: any) {
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
-  const [inputValue, setinputValue] = useState("");
+  const [inputValue, setinputValue] = useState(defaultSearch);
 
   const handleSearch = () => {
     const clean = inputValue.trim().toLowerCase();
@@ -39,6 +39,10 @@ export default function NavbarClient({ products }: any) {
       handleSearch();
     }
   };
+
+  useEffect(() => {
+    setinputValue(defaultSearch);
+  }, [defaultSearch]);
 
   return (
     <>
