@@ -107,9 +107,11 @@ async function getProducts(): Promise<Product[]> {
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: { keyword?: string };
+  searchParams: Promise<{ keyword?: string }>;
 }) {
-  const keyword = searchParams.keyword?.toLowerCase() || "";
+  const params = await searchParams;
+  const keyword = params.keyword?.toLowerCase() || "";
+
   const products = await getProducts();
 
   const filtered = products.filter((p) =>
@@ -127,15 +129,28 @@ export default async function SearchPage({
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
           {filtered.length > 0 ? (
             filtered.map((p) => (
-              <div key={p.id} className="bg-white rounded-md shadow-white hover:shadow-lg transition p-2 cursor-pointer   ">
-                <Image src={p.image} alt={p.title} width={300} height={300} className="w-full h-40 object-cover rounded" />
-                <p className={`text-sm mt-2 line-clamp-2 text-black ${playfairDisplayBold.className}`}>{p.title}</p>
+              <div
+                key={p.id}
+                className="bg-white rounded-md shadow-white hover:shadow-lg transition p-2 cursor-pointer"
+              >
+                <Image
+                  src={p.image}
+                  alt={p.title}
+                  width={300}
+                  height={300}
+                  className="w-full h-40 object-cover rounded"
+                />
+                <p className={`text-sm mt-2 line-clamp-2 text-black ${playfairDisplayBold.className}`}>
+                  {p.title}
+                </p>
                 <p className="text-yellow-500 mt-1 font-semibold">{p.price}</p>
                 <p className="text-xs text-gray-500">{p.sold}</p>
               </div>
             ))
           ) : (
-            <p className="col-span-full text-center">Produk tidak ditemukan</p>
+            <p className="col-span-full text-center">
+              Produk tidak ditemukan
+            </p>
           )}
         </div>
       </div>

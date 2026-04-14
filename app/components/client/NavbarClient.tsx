@@ -27,9 +27,11 @@ export default function NavbarClient({ products }: any) {
   const [inputValue, setinputValue] = useState("");
 
   const handleSearch = () => {
-    if (!inputValue.trim()) return;
+    const clean = inputValue.trim().toLowerCase();
 
-    router.push(`/search?keyword=${encodeURIComponent(inputValue)}`);
+    if (!clean) return;
+
+    router.push(`/search?keyword=${encodeURIComponent(clean)}`);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
