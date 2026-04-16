@@ -33,7 +33,7 @@ export default async function LatestNews() {
   }
 
   const newsData: News[] = await res.json();
-  const latestNews = newsData.slice(0, 10);
+  const latestNews = newsData.slice(0, 5);
 
   return (
     <section className="py-10">

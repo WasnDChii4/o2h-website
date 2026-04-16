@@ -125,6 +125,8 @@ export default async function SearchPage({
 
   return (
     <section>
+      <title>Search | O2H Website Center</title>
+
       <NavbarClient defaultSearch={keyword} />
       <div className="my-20 m-5 md:m-20">
         <h1 className={`text-lg my-7 ${playfairDisplayRegular.className}`}>
