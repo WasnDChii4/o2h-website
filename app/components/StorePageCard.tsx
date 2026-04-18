@@ -158,7 +158,7 @@ export default async function StorePageCard() {
           </h1>
 
           <Link
-            href="/store"
+            href="/stores"
             className={`flex items-center gap-2 text-sm md:text-base opacity-50 hover:opacity-100 transition leading-none ${playfairDisplayRegular.className}`}
           >
             View More
