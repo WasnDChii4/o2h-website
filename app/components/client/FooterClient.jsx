@@ -1,6 +1,7 @@
 "use client";
 
 import { FaTiktok, FaXTwitter, FaYoutube, FaInstagram } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function FooterClient() {
   return (
