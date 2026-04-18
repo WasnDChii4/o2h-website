@@ -14,7 +14,7 @@ export default function Home() {
       <LatestNews />
       <AlbumsCarousel />
       <StorePageCard />
-      <Footer />
+      <Footer variant="yellow" />
     </>
   );
 }
