@@ -106,6 +106,48 @@ async function getProducts(): Promise<Product[]> {
       image: "/img/products/O2H_NFL_Black_Jersey.png",
       sold: "10RB+ Terjual",
     },
+    {
+      id: 13,
+      title: "O2H Hostel Embroidery Baseball Jersey Black",
+      price: "Rp. 550.000",
+      image: "/img/products/O2H_Hostel_Embroidery_Baseball_Jersey_Black.png",
+      sold: "10RB+ Terjual",
+    },
+    {
+      id: 14,
+      title: "O2H Hostel Embroidery Baseball Jersey Black",
+      price: "Rp. 550.000",
+      image: "/img/products/O2H_Hostel_Embroidery_Baseball_Jersey_Black.png",
+      sold: "10RB+ Terjual",
+    },
+    {
+      id: 15,
+      title: "O2H Hostel Embroidery Baseball Jersey Black",
+      price: "Rp. 550.000",
+      image: "/img/products/O2H_Hostel_Embroidery_Baseball_Jersey_Black.png",
+      sold: "10RB+ Terjual",
+    },
+    {
+      id: 16,
+      title: "O2H Hostel Embroidery Baseball Jersey Black",
+      price: "Rp. 550.000",
+      image: "/img/products/O2H_Hostel_Embroidery_Baseball_Jersey_Black.png",
+      sold: "10RB+ Terjual",
+    },
+    {
+      id: 17,
+      title: "O2H Hostel Embroidery Baseball Jersey Black",
+      price: "Rp. 550.000",
+      image: "/img/products/O2H_Hostel_Embroidery_Baseball_Jersey_Black.png",
+      sold: "10RB+ Terjual",
+    },
+    {
+      id: 18,
+      title: "O2H Hostel Embroidery Baseball Jersey Black",
+      price: "Rp. 550.000",
+      image: "/img/products/O2H_Hostel_Embroidery_Baseball_Jersey_Black.png",
+      sold: "10RB+ Terjual",
+    },
   ];
 }
 
