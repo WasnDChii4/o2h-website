@@ -36,11 +36,11 @@
 }
 
 .custom-pagination .swiper-pagination-bullet-active {
-  background: #facc15;
+  background: #000000;
   opacity: 1;
   transform: scale(1.3);
 }
 
 .swiper-pagination-bullet-active {
-  box-shadow: 0 0 6px #facc15;
+  box-shadow: 0 0 6px #000000;
 }

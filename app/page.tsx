@@ -3,6 +3,7 @@ import LatestNews from "./components/LastestNews";
 import AlbumsCarousel from "./components/AlbumsCarousel";
 import Hero from "./components/client/HeroPageUtama";
 import StorePageCard from "./components/StorePageCard";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <LatestNews />
       <AlbumsCarousel />
       <StorePageCard />
+      <Footer />
     </>
   );
 }

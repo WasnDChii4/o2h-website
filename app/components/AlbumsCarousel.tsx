@@ -15,7 +15,7 @@ const playfairDisplayRegular = Playfair_Display({
 
 export default function  AlbumsCarousel() {
   return (
-    <section className="py-10 bg-white">
+    <section className="py-10 bg-yellow-400">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between mb-10 text-black">
           <h1
