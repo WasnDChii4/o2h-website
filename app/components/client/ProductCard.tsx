@@ -10,7 +10,7 @@ const playfairDisplayBold = Playfair_Display({
 
 export default function ProductCard({ product }: any) {
   return (
-    <div className="bg-white rounded-md shadow-white hover:shadow-lg transition p-2 cursor-pointer">
+    <div className="bg-white rounded-md shadow-white hover:shadow-md transition p-2 cursor-pointer">
       <Image
         src={product.image}
         alt={product.title}

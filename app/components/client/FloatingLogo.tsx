@@ -20,7 +20,7 @@ export default function FloatingLogo() {
 
   return (
     <div
-      className="fixed bottom-6 right-7 w-16 h-16 rounded-full overflow-hidden shadow-2xl z-50"
+      className="fixed bottom-6 right-7 w-16 h-16 rounded-full overflow-hidden z-50  shadow-[0_0_15px_5px_rgba(0,0,0,0.5)]"
       style={{
         transform: `rotate(${rotation}deg)`,
         transition: "transform 0.1s linear",
