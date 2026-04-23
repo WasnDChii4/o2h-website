@@ -4,6 +4,7 @@ import AlbumsCarousel from "./components/AlbumsCarousel";
 import Hero from "./components/client/HeroPageUtama";
 import StorePageCard from "./components/StorePageCard";
 import Footer from "./components/Footer";
+import FloatingLogo from "./components/client/FloatingLogo";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <AlbumsCarousel />
       <StorePageCard />
       <Footer variant="yellow" />
+      <FloatingLogo />
     </>
   );
 }
