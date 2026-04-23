@@ -81,7 +81,7 @@ export default function Footer({ variant = "dark" }: FooterProps) {
 
           {/* Copyright */}
           <p className={current.copyright}>
-            © 2026 tuki. ALL RIGHTS RESERVED. powered by SKIYAKI.inc
+            © 2026 O2H ALL RIGHTS RESERVED. powered by WASENIME.inc
           </p>
         </div>
       </div>
