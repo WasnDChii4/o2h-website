@@ -45,7 +45,7 @@ export default function Footer({ variant = "dark" }: FooterProps) {
             <div className="w-27.5 md:w-35">
               <Image
                 src={O2HLogo}
-                alt="tuki logo"
+                alt="O2H Logo"
                 className="w-full h-auto object-contain"
                 priority
               />
