@@ -2,7 +2,7 @@ import Link from "next/link";
 import { headers } from "next/headers";
 import { Playfair_Display } from "next/font/google";
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import ProductCard from "./client/ProductCard";
+import HomeProductCard from "./client/HomeProductCard";
 
 type Product = {
   id: number;
@@ -22,7 +22,7 @@ const playfairDisplayRegular = Playfair_Display({
   subsets: ["latin"],
 });
 
-export default async function StorePageCard() {
+export default async function HomeStorePageCard() {
   const headersList = await headers();
   const host = headersList.get("host");
 
@@ -56,7 +56,7 @@ export default async function StorePageCard() {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
           {productsData.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <HomeProductCard key={product.id} product={product} />
           ))}
         </div>
       </div>

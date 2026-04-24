@@ -8,7 +8,7 @@ const playfairDisplayBold = Playfair_Display({
   subsets: ["latin"],
 });
 
-export default function ProductCard({ product }: any) {
+export default function HomeProductCard({ product }: any) {
   return (
     <div className="bg-white rounded-md shadow-white hover:shadow-md transition p-2 cursor-pointer">
       <Image
