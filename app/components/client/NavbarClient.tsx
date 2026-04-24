@@ -252,6 +252,15 @@ export default function NavbarClient({ defaultSearch = "" }: any) {
           </li>
           <li>
             <Link
+              href="/members"
+              onClick={() => setOpen(false)}
+              className="hover:bg-yellow-400 hover:text-black transition"
+            >
+              Members
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/photobooks"
               onClick={() => setOpen(false)}
               className="hover:bg-yellow-400 hover:text-black transition"
