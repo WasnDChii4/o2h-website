@@ -1,19 +1,23 @@
 "use client";
 
-// Import Library
+// Import Image dan Link dari Next.js untuk optimasi gambar
 import Image from "next/image";
 import Link from "next/link";
+
+// Import React Hooks dan Router untuk navigasi
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+
+// Import Icon dari React Icons untuk ikon pencarian, keranjang, dan notifikasi
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
 import { Playfair_Display } from "next/font/google";
 
-// Import Assets
+// Import gambar untuk avatar sementara dan logo O2H
 import AvatarSementara from "../../../public/img/backgrounds/O2H_ImagesHero_2.jpg";
 import O2HLogo from "../../../public/img/logos/O2H_Logos_1.png";
 
-// Setup Font
+// Import font Playfair Display dengan varian regular dan bold untuk digunakan di navbar dan dropdown
 const playfairDisplayRegular = Playfair_Display({
   weight: "400",
   subsets: ["latin"],
@@ -23,32 +27,32 @@ const playfairDisplayBold = Playfair_Display({
   subsets: ["latin"],
 });
 
-// Component Navbar
+// Komponen NavbarClient untuk menampilkan navbar dengan fitur pencarian, ikon, dan dropdown profil
 export default function NavbarClient({ defaultSearch = "" }: any) {
-  // State
+  // State untuk mengontrol tampilan sidebar dan nilai input pencarian
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
   const [inputValue, setinputValue] = useState(defaultSearch);
 
-  // Function Search
+  // Fungsi untuk menangani pencarian, membersihkan input, dan mengarahkan ke halaman hasil pencarian
   const handleSearch = () => {
     const clean = inputValue.trim().toLowerCase();
 
     if (!clean) return;
 
-    // Redirect ke halaman search
+    // Redirect ke halaman search dengan query parameter keyword yang sudah di-encode untuk menghindari masalah karakter khusus
     router.push(`/search?keyword=${encodeURIComponent(clean)}`);
   };
 
-  // Handle Enter Key Press
+  // Fungsi untuk menangani event keydown pada input pencarian, jika tombol Enter ditekan maka akan memanggil fungsi handleSearch
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleSearch();
     }
   };
 
-  // Sync Default Search
+  // useEffect untuk memperbarui nilai input pencarian setiap kali defaultSearch berubah, sehingga input akan selalu sinkron dengan nilai default yang diberikan
   useEffect(() => {
     setinputValue(defaultSearch);
   }, [defaultSearch]);

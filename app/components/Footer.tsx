@@ -1,14 +1,20 @@
+// Import komponen FooterClient yang akan menampilkan bagian klien pada footer, serta Image dan Link dari Next.js untuk optimasi gambar dan navigasi antar halaman  
 import FooterClient from "./client/FooterClient";
+
+// Import Image dan Link dari Next.js untuk optimasi gambar dan navigasi antar halaman
 import Image from "next/image";
 import Link from "next/link";
 
+// Import gambar logo O2H untuk ditampilkan di bagian kiri footer
 import O2HLogo from "./../../public/img/logos/O2H_Logos_1.png";
 
+// Tipe untuk properti Footer yang menerima varian tema (dark, yellow, light) dengan nilai default "dark"
 type FooterProps = {
   variant?: "dark" | "yellow" | "light";
 };
 
-export default function Footer({ variant = "dark" }: FooterProps) {
+// Komponen Footer untuk menampilkan bagian bawah halaman dengan berbagai varian tema yang dapat dipilih melalui properti variant, serta menampilkan logo, link, dan informasi hak cipta
+export default function Footer({ variant = "yellow" }: FooterProps) {
   const variants = {
     dark: {
       bg: "bg-[#070b1a]",
@@ -33,14 +39,18 @@ export default function Footer({ variant = "dark" }: FooterProps) {
     },
   };
 
+  // Mendapatkan kelas CSS yang sesuai dengan varian tema yang dipilih dari objek variants
   const current = variants[variant];
 
   return (
+    // Footer utama dengan kelas CSS yang dinamis berdasarkan varian tema yang dipilih, serta padding dan tata letak grid untuk mengatur konten di dalamnya
     <footer className={`${current.bg} ${current.text} px-6 md:px-10 py-12`}>
+      {/* Wrapper (grid layout) */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[0.8fr_1.6fr] gap-8 items-start">
         
-        {/* LEFT */}
+        {/* LEFT (Logo + Social) */}
         <div className="flex flex-col gap-6">
+          {/* Logo */}
           <Link href="/">
             <div className="w-27.5 md:w-35">
               <Image
@@ -52,12 +62,13 @@ export default function Footer({ variant = "dark" }: FooterProps) {
             </div>
           </Link>
 
+          {/* Social Media */}
           <FooterClient />
         </div>
 
-        {/* RIGHT */}
+        {/* RIGHT (Links + Info) */}
         <div className="flex flex-col gap-5 text-sm">
-          {/* Links */}
+          {/* List Link Informasi */}
           <div className="flex flex-wrap gap-x-5 gap-y-2 leading-relaxed">
             <p className="hover:underline cursor-pointer">About this site</p>
             <p className="hover:underline cursor-pointer">About accounts</p>
@@ -73,7 +84,7 @@ export default function Footer({ variant = "dark" }: FooterProps) {
           {/* Divider */}
           <hr className={`${current.divider} my-2`} />
 
-          {/* Text */}
+          {/* Disclaimer */}
           <p className={`${current.subText} leading-relaxed`}>
             Unauthorized reproduction of all published content (articles,
             images, audio data, video data, etc.) is prohibited.
