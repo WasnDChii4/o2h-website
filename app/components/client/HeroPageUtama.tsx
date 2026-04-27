@@ -1,7 +1,7 @@
 "use client";
 
 // Import hooks React
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 
 // Import Image dari Next.js
 import Image from "next/image";
@@ -23,6 +23,28 @@ const playfairDisplayRegular = Playfair_Display({
 export default function Hero() {
   // State untuk mengontrol efek blur dan scale pada gambar latar belakang
   const [isMounted, setIsMounted] = useState(false);
+
+  const [displayText, setDisplayText] = useState("");
+  const fullText = "Together in Every Step";
+
+  useEffect(() => {
+    setIsMounted(true);
+
+    const startTyping = setTimeout(() => {
+      let index = 0;
+
+      const typingInterval = setInterval(() => {
+        setDisplayText(fullText.slice(0, index + 1));
+        index++;
+
+        if (index === fullText.length) {
+          clearInterval(typingInterval);
+        }
+      }, 150);
+    }, 1500);
+
+    return () => clearTimeout(startTyping);
+  }, []);
 
   useEffect(() => {
     // Setelah komponen ter-mount, atur isMounted ke true untuk memicu efek transisi pada gambar latar belakang
@@ -53,7 +75,8 @@ export default function Hero() {
           <h1
             className={`mb-5 text-4xl md:text-5xl font-bold ${bungee.className}`}
           >
-            Together in Every Step
+            {displayText}
+            <span className="animate-pulse">|</span>
           </h1>
           {/* Deskripsi */}
           <p className={`mb-5 md:text-xl ${playfairDisplayRegular.className}`}>
