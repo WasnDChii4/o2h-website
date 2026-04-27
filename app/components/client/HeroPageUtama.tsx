@@ -88,7 +88,7 @@ export default function Hero() {
             className={`mb-5 text-4xl md:text-5xl font-bold ${bungee.className}`}
           >
             {displayText}
-            <span className="animate-pulse">|</span>
+            <span className="animate-ping">|</span>
           </h1>
           {/* Deskripsi */}
           <p className={`mb-5 md:text-xl ${playfairDisplayRegular.className}`}>
