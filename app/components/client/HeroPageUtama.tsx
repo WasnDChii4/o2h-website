@@ -1,7 +1,7 @@
 "use client";
 
 // Import hooks React
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 
 // Import Image dari Next.js
 import Image from "next/image";
@@ -24,28 +24,40 @@ export default function Hero() {
   // State untuk mengontrol efek blur dan scale pada gambar latar belakang
   const [isMounted, setIsMounted] = useState(false);
 
+  // State untuk menyimpan teks yang akan ditampilkan dengan efek mengetik
   const [displayText, setDisplayText] = useState("");
+
+  // Teks lengkap yang akan ditampilkan dengan efek mengetik
   const fullText = "Together in Every Step";
 
+  // useEffect untuk memulai efek mengetik setelah komponen ter-mount
   useEffect(() => {
     setIsMounted(true);
 
+    // Mulai efek mengetik setelah delay 1.5 detik
     const startTyping = setTimeout(() => {
+      // Index untuk melacak posisi karakter yang sedang ditampilkan
       let index = 0;
 
+      // Interval untuk menampilkan karakter satu per satu setiap 150ms
       const typingInterval = setInterval(() => {
+        // Perbarui displayText dengan menambahkan karakter berikutnya dari fullText
         setDisplayText(fullText.slice(0, index + 1));
+        // Tingkatkan index untuk menampilkan karakter berikutnya pada iterasi berikutnya
         index++;
 
+        // Jika semua karakter sudah ditampilkan, hentikan interval
         if (index === fullText.length) {
           clearInterval(typingInterval);
         }
-      }, 150);
-    }, 1500);
+      }, 150); // Tampilkan karakter baru setiap 150ms
+    }, 1500); // Mulai efek mengetik setelah delay 1.5 detik
 
+    // Bersihkan timeout saat komponen unmount untuk mencegah memory leak
     return () => clearTimeout(startTyping);
   }, []);
 
+  // useEffect untuk mengatur isMounted ke true setelah komponen ter-mount untuk memicu efek transisi pada gambar latar belakang
   useEffect(() => {
     // Setelah komponen ter-mount, atur isMounted ke true untuk memicu efek transisi pada gambar latar belakang
     setIsMounted(true);
