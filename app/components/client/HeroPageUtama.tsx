@@ -82,7 +82,7 @@ export default function Hero() {
 
       {/* Koneten utama */}
       <div className="hero-content text-neutral-content text-center z-10">
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           {/* Judul utama */}
           <h1
             className={`mb-5 text-4xl md:text-5xl font-bold ${bungee.className}`}
@@ -92,9 +92,10 @@ export default function Hero() {
           </h1>
           {/* Deskripsi */}
           <p className={`mb-5 md:text-xl ${playfairDisplayRegular.className}`}>
-            O2H Website Center yang berisi informasi para member streamer dalam
-            komunitas, merch yang sedang di jual dan pre-order, maupun info
-            terbaru seputar kegiatan O2H.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima
+            quae assumenda architecto, quidem deserunt nihil modi in aliquid?
+            Ducimus saepe facilis commodi totam vel maiores quis iusto nobis
+            mollitia iste!
           </p>
           {/* Button CTA */}
           <button
