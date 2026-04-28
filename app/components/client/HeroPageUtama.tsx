@@ -30,11 +30,13 @@ export default function Hero() {
   // Teks lengkap yang akan ditampilkan dengan efek mengetik
   const fullText = "Together in Every Step";
 
+  const [showContentUtama, setShowContentUtama] = useState(false); // State untuk mengontrol apakah teks konten sudah ditampilkan atau belum
+
   // Fungsi untuk menangani klik pada tombol "Let's Explore" yang akan menggulir ke bagian "Latest News" dengan efek scroll yang halus
   const handleScrollButton = () => {
     const section = document.getElementById("latest-news"); // Mendapatkan elemen dengan ID "latest-news" dan menggulir ke sana dengan efek scroll yang halus
     section?.scrollIntoView({ behavior: "smooth" }); // Menggunakan optional chaining untuk memastikan bahwa section tidak null sebelum memanggil scrollIntoView
-  }
+  };
 
   // useEffect untuk memulai efek mengetik setelah komponen ter-mount
   useEffect(() => {
@@ -49,9 +51,13 @@ export default function Hero() {
         setDisplayText(fullText.slice(0, index + 1)); // Perbarui displayText dengan menambahkan karakter berikutnya dari fullText
         index++; // Tingkatkan index untuk menampilkan karakter berikutnya pada iterasi berikutnya
 
-        // Jika semua karakter sudah ditampilkan, hentikan interval
+        // Jika semua karakter sudah ditampilkan, hentikan interval dan tampilkan konten utama setelah delay 300ms
         if (index === fullText.length) {
-          clearInterval(typingInterval);
+          clearInterval(typingInterval); // Hentikan interval ketika semua karakter sudah ditampilkan
+
+          setTimeout(() => {
+            setShowContentUtama(true); // Tampilkan konten utama setelah delay 300ms setelah efek mengetik selesai
+          }, 300);
         }
       }, 150); // Tampilkan karakter baru setiap 150ms
     }, 1500); // Mulai efek mengetik setelah delay 1.5 detik
@@ -92,7 +98,13 @@ export default function Hero() {
             <span className="animate-ping">|</span>
           </h1>
           {/* Deskripsi */}
-          <p className={`mb-5 md:text-xl ${playfairDisplayRegular.className}`}>
+          <p
+            className={`mb-5 md:text-xl transition-all duration-300 ${
+              showContentUtama
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-5"
+            } ${playfairDisplayRegular.className}`}
+          >
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima
             quae assumenda architecto, quidem deserunt nihil modi in aliquid?
             Ducimus saepe facilis commodi totam vel maiores quis iusto nobis
@@ -101,7 +113,11 @@ export default function Hero() {
           {/* Button CTA */}
           <button
             onClick={handleScrollButton}
-            className={`btn bg-yellow-400 hover:bg-yellow-500 active:bg-yellow-600 text-black font-bold rounded-xl ${bungee.className}`}
+            className={`btn bg-yellow-400 hover:bg-yellow-500 active:bg-yellow-600 text-black font-bold rounded-xl transition-all duration-1000 delay-200 ${
+              showContentUtama
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-5"
+            } ${bungee.className}`}
           >
             Let's Eksplore
           </button>
