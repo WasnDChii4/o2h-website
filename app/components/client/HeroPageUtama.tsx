@@ -30,6 +30,11 @@ export default function Hero() {
   // Teks lengkap yang akan ditampilkan dengan efek mengetik
   const fullText = "Together in Every Step";
 
+  const handleScrollButton = () => {
+    const section = document.getElementById("latest-news");
+    section?.scrollIntoView({ behavior: "smooth" });
+  }
+
   // useEffect untuk memulai efek mengetik setelah komponen ter-mount
   useEffect(() => {
     setIsMounted(true);
@@ -99,6 +104,7 @@ export default function Hero() {
           </p>
           {/* Button CTA */}
           <button
+            onClick={handleScrollButton}
             className={`btn bg-yellow-400 hover:bg-yellow-500 active:bg-yellow-600 text-black font-bold rounded-xl ${bungee.className}`}
           >
             Let's Eksplore

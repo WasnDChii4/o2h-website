@@ -52,7 +52,7 @@ export default async function LatestNews() {
 
   return (
     // Section utama untuk bagian berita terbaru dengan padding vertikal
-    <section className="py-10">
+    <section className="py-10 scroll-mt-12 md:scroll-mt-16" id="latest-news">
       {/* Container utama untuk bagian berita terbaru dengan lebar maksimum, margin otomatis untuk pusat, dan padding horizontal */}
       <div className="max-w-7xl mx-auto px-6">
         {/* Header untuk bagian berita terbaru dengan judul "Latest News" dan tombol "View More" yang mengarah ke halaman berita, serta tata letak flex untuk mengatur posisi judul dan tombol */}
