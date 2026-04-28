@@ -53,6 +53,7 @@ export default async function HomeStorePageCard() {
   // Mengambil data produk dari respons API dalam format JSON dan menyimpannya dalam variabel productsData, yang akan digunakan untuk menampilkan daftar produk di bagian toko
   const productsData: Product[] = await res.json();
 
+  // Mengambil 18 produk secara acak dari data produk yang diambil dari API dengan menggunakan metode sort untuk mengacak urutan produk dan slice untuk mengambil 18 produk pertama dari array yang sudah diacak, dan menyimpannya dalam variabel limitedRandomProducts yang akan digunakan untuk menampilkan daftar produk di bagian toko
   const limitedRandomProducts = [...productsData].sort(() => Math.random() - 0.5).slice(0, 18);
 
   return (
