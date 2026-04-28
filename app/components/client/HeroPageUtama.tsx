@@ -57,7 +57,7 @@ export default function Hero() {
 
           setTimeout(() => {
             setShowContentUtama(true); // Tampilkan konten utama setelah delay 300ms setelah efek mengetik selesai
-          }, 300);
+          }, 500);
         }
       }, 150); // Tampilkan karakter baru setiap 150ms
     }, 1500); // Mulai efek mengetik setelah delay 1.5 detik
@@ -99,7 +99,7 @@ export default function Hero() {
           </h1>
           {/* Deskripsi */}
           <p
-            className={`mb-5 md:text-xl transition-all duration-300 ${
+            className={`mb-5 md:text-xl transform-gpu transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               showContentUtama
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-5"
@@ -113,7 +113,7 @@ export default function Hero() {
           {/* Button CTA */}
           <button
             onClick={handleScrollButton}
-            className={`btn bg-yellow-400 hover:bg-yellow-500 active:bg-yellow-600 text-black font-bold rounded-xl transition-all duration-1000 delay-200 ${
+            className={`btn bg-yellow-400 hover:bg-yellow-500 active:bg-yellow-600 text-black font-bold rounded-xl transform-gpu transition-all duration-700 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               showContentUtama
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-5"
