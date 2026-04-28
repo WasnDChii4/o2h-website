@@ -29,9 +29,8 @@ const playfairDisplayBold = Playfair_Display({
 
 // Komponen NavbarClient untuk menampilkan navbar dengan fitur pencarian, ikon, dan dropdown profil
 export default function NavbarClient({ defaultSearch = "" }: any) {
-  // State untuk mengontrol tampilan sidebar dan nilai input pencarian
-  const [open, setOpen] = useState(false);
-  const router = useRouter();
+  const [open, setOpen] = useState(false); // State untuk mengontrol apakah sidebar terbuka atau tidak
+  const router = useRouter(); // Hook untuk navigasi programatik ke halaman lain
 
   const [inputValue, setinputValue] = useState(defaultSearch);
 

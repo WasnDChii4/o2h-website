@@ -32,8 +32,7 @@ export default function Hero() {
 
   // Fungsi untuk menangani klik pada tombol "Let's Explore" yang akan menggulir ke bagian "Latest News" dengan efek scroll yang halus
   const handleScrollButton = () => {
-    // Mendapatkan elemen dengan ID "latest-news" dan menggulir ke sana dengan efek scroll yang halus
-    const section = document.getElementById("latest-news");
+    const section = document.getElementById("latest-news"); // Mendapatkan elemen dengan ID "latest-news" dan menggulir ke sana dengan efek scroll yang halus
     section?.scrollIntoView({ behavior: "smooth" }); // Menggunakan optional chaining untuk memastikan bahwa section tidak null sebelum memanggil scrollIntoView
   }
 
@@ -43,15 +42,12 @@ export default function Hero() {
 
     // Mulai efek mengetik setelah delay 1.5 detik
     const startTyping = setTimeout(() => {
-      // Index untuk melacak posisi karakter yang sedang ditampilkan
-      let index = 0;
+      let index = 0; // Index untuk melacak posisi karakter yang sedang ditampilkan
 
       // Interval untuk menampilkan karakter satu per satu setiap 150ms
       const typingInterval = setInterval(() => {
-        // Perbarui displayText dengan menambahkan karakter berikutnya dari fullText
-        setDisplayText(fullText.slice(0, index + 1));
-        // Tingkatkan index untuk menampilkan karakter berikutnya pada iterasi berikutnya
-        index++;
+        setDisplayText(fullText.slice(0, index + 1)); // Perbarui displayText dengan menambahkan karakter berikutnya dari fullText
+        index++; // Tingkatkan index untuk menampilkan karakter berikutnya pada iterasi berikutnya
 
         // Jika semua karakter sudah ditampilkan, hentikan interval
         if (index === fullText.length) {
@@ -60,14 +56,12 @@ export default function Hero() {
       }, 150); // Tampilkan karakter baru setiap 150ms
     }, 1500); // Mulai efek mengetik setelah delay 1.5 detik
 
-    // Bersihkan timeout saat komponen unmount untuk mencegah memory leak
-    return () => clearTimeout(startTyping);
+    return () => clearTimeout(startTyping); // Bersihkan timeout saat komponen unmount untuk mencegah memory leak
   }, []);
 
   // useEffect untuk mengatur isMounted ke true setelah komponen ter-mount untuk memicu efek transisi pada gambar latar belakang
   useEffect(() => {
-    // Setelah komponen ter-mount, atur isMounted ke true untuk memicu efek transisi pada gambar latar belakang
-    setIsMounted(true);
+    setIsMounted(true); // Setelah komponen ter-mount, atur isMounted ke true untuk memicu efek transisi pada gambar latar belakang
   }, []);
 
   return (
