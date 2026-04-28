@@ -57,7 +57,7 @@ export default function Hero() {
 
           setTimeout(() => {
             setShowContentUtama(true); // Tampilkan konten utama setelah delay 300ms setelah efek mengetik selesai
-          }, 500);
+          }, 300);
         }
       }, 150); // Tampilkan karakter baru setiap 150ms
     }, 1500); // Mulai efek mengetik setelah delay 1.5 detik
