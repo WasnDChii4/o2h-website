@@ -53,6 +53,8 @@ export default async function HomeStorePageCard() {
   // Mengambil data produk dari respons API dalam format JSON dan menyimpannya dalam variabel productsData, yang akan digunakan untuk menampilkan daftar produk di bagian toko
   const productsData: Product[] = await res.json();
 
+  const limitedRandomProducts = [...productsData].sort(() => Math.random() - 0.5).slice(0, 18);
+
   return (
     // Section utama untuk bagian toko dengan padding vertikal
     <section className="py-10">
@@ -79,7 +81,7 @@ export default async function HomeStorePageCard() {
         {/* Grid untuk menampilkan daftar produk dengan tata letak responsif yang menyesuaikan jumlah kolom berdasarkan ukuran layar, serta gap antara item grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
           {/* Melakukan iterasi pada data produk yang diambil dari API (productsData) dan untuk setiap produk, akan menampilkan komponen HomeProductCard dengan properti yang sesuai seperti id, title, price, image, dan sold, serta memberikan key yang unik untuk setiap item dalam daftar agar React dapat mengelola rendering dengan efisien */}
-          {productsData.map((product) => (
+          {limitedRandomProducts.map((product) => (
             <HomeProductCard
               key={product.id} // Memberikan key unik untuk setiap item dalam daftar produk berdasarkan id produk
               product={product}

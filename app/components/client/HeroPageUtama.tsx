@@ -30,9 +30,11 @@ export default function Hero() {
   // Teks lengkap yang akan ditampilkan dengan efek mengetik
   const fullText = "Together in Every Step";
 
+  // Fungsi untuk menangani klik pada tombol "Let's Explore" yang akan menggulir ke bagian "Latest News" dengan efek scroll yang halus
   const handleScrollButton = () => {
+    // Mendapatkan elemen dengan ID "latest-news" dan menggulir ke sana dengan efek scroll yang halus
     const section = document.getElementById("latest-news");
-    section?.scrollIntoView({ behavior: "smooth" });
+    section?.scrollIntoView({ behavior: "smooth" }); // Menggunakan optional chaining untuk memastikan bahwa section tidak null sebelum memanggil scrollIntoView
   }
 
   // useEffect untuk memulai efek mengetik setelah komponen ter-mount
