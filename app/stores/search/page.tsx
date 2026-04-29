@@ -1,5 +1,7 @@
 import { headers } from "next/headers";
-import NavbarClient from "../components/client/NavbarClient";
+import SearchStore from "../../components/client/SearchStore";
+import NavbarClient from "../../components/client/NavbarClient";
+import FloatingLogo from "@/app/components/client/FloatingLogo";
 import Image from "next/image";
 import { Playfair_Display } from "next/font/google";
 
@@ -55,11 +57,17 @@ export default async function SearchPage({
   return (
     <section>
       <title>Search | O2H Website Center</title>
+      <NavbarClient />
 
-      <NavbarClient defaultSearch={keyword} />
-      <div className="my-20 m-5 md:m-20">
+      <div className="flex justify-center px-4 mt-20">
+        <div className="flex w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
+          <SearchStore defaultSearch={keyword} />
+        </div>
+      </div>
+
+      <div className="my-8 m-5 md:m-14">
         <h1 className={`text-lg my-7 ${playfairDisplayRegular.className}`}>
-          Hasil pencarian: "{keyword}"
+          Hasil pencarian: "<a className={`${playfairDisplayBold.className}`}>{keyword}</a>"
         </h1>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
@@ -82,16 +90,23 @@ export default async function SearchPage({
                   >
                     {p.title}
                   </p>
-                  <p className="text-yellow-500 mt-1 font-semibold">{p.price}</p>
+                  <p className="text-yellow-500 mt-1 font-semibold">
+                    {p.price}
+                  </p>
                   <p className="text-xs text-gray-500">{p.sold}</p>
                 </div>
               </div>
             ))
           ) : (
-            <p className={`col-span-full flex justify-center items-center min-h-[60vh] text-2xl ${playfairDisplayBold.className}`}>Produk tidak ditemukan</p>
+            <p
+              className={`col-span-full flex justify-center items-center min-h-[60vh] text-2xl ${playfairDisplayBold.className}`}
+            >
+              Produk tidak ditemukan
+            </p>
           )}
         </div>
       </div>
+      <FloatingLogo />
     </section>
   );
 }

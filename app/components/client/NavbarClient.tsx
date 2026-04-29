@@ -28,33 +28,8 @@ const playfairDisplayBold = Playfair_Display({
 });
 
 // Komponen NavbarClient untuk menampilkan navbar dengan fitur pencarian, ikon, dan dropdown profil
-export default function NavbarClient({ defaultSearch = "" }: any) {
+export default function NavbarClient() {
   const [open, setOpen] = useState(false); // State untuk mengontrol apakah sidebar terbuka atau tidak
-  const router = useRouter(); // Hook untuk navigasi programatik ke halaman lain
-
-  const [inputValue, setinputValue] = useState(defaultSearch);
-
-  // Fungsi untuk menangani pencarian, membersihkan input, dan mengarahkan ke halaman hasil pencarian
-  const handleSearch = () => {
-    const clean = inputValue.trim().toLowerCase();
-
-    if (!clean) return;
-
-    // Redirect ke halaman search dengan query parameter keyword yang sudah di-encode untuk menghindari masalah karakter khusus
-    router.push(`/search?keyword=${encodeURIComponent(clean)}`);
-  };
-
-  // Fungsi untuk menangani event keydown pada input pencarian, jika tombol Enter ditekan maka akan memanggil fungsi handleSearch
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      handleSearch();
-    }
-  };
-
-  // useEffect untuk memperbarui nilai input pencarian setiap kali defaultSearch berubah, sehingga input akan selalu sinkron dengan nilai default yang diberikan
-  useEffect(() => {
-    setinputValue(defaultSearch);
-  }, [defaultSearch]);
 
   return (
     <>
@@ -93,24 +68,7 @@ export default function NavbarClient({ defaultSearch = "" }: any) {
 
         {/* Tengah (Search Bar Desktop) */}
         <div className="navbar-center hidden lg:flex">
-          <div className="flex w-130 lg:w-160 xl:w-180">
-            {/* Input Search */}
-            <input
-              type="text"
-              placeholder="Telusuri..."
-              value={inputValue}
-              onChange={(e) => setinputValue(e.target.value)}
-              onKeyDown={handleKeyDown}
-              className=" input w-full rounded-l-full bg-yellow-100 border border-yellow-500/30 focus:border-yellow-600 focus:outline-none"
-            />
-            {/* Button Search */}
-            <button
-              onClick={handleSearch}
-              className=" px-5 rounded-r-full bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 border border-yellow-500/30 transition"
-            >
-              <FaSearch size={20} />
-            </button>
-          </div>
+          <h1 className={`text-2xl ${playfairDisplayBold.className}`}>O2H Website</h1>
         </div>
 
         {/* Kanan (Icon & Profile) */}
@@ -203,7 +161,7 @@ export default function NavbarClient({ defaultSearch = "" }: any) {
         </div>
 
         {/* Search Mobile */}
-        <div className="p-4 lg:hidden">
+        {/* <div className="p-4 lg:hidden">
           <div className="flex">
             <input
               type="text"
@@ -220,7 +178,7 @@ export default function NavbarClient({ defaultSearch = "" }: any) {
               <FaSearch size={18} />
             </button>
           </div>
-        </div>
+        </div> */}
 
         {/* Menu Sidebar */}
         <ul
