@@ -4,12 +4,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// Import React Hooks dan Router untuk navigasi
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useState } from "react"; // Import React Hooks dan Router untuk navigasi
 
 // Import Icon dari React Icons untuk ikon pencarian, keranjang, dan notifikasi
-import { FaSearch, FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
 import { Playfair_Display } from "next/font/google";
 

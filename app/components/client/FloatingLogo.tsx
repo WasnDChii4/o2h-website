@@ -1,14 +1,12 @@
 "use client";
 
-// Import hooks React
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"; // Import hooks React
 
 // Import routing & image Next.js
 import Link from "next/link";
 import Image from "next/image";
 
-// Import logo
-import O2HLogo from "../../../public/img/logos/O2H_Logos_2.png";
+import O2HLogo from "../../../public/img/logos/O2H_Logos_2.png"; // Import logo O2H untuk ditampilkan pada komponen FloatingLogo
 
 // Kompomen utama FloatingLogo
 export default function FloatingLogo() {

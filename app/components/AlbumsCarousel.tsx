@@ -1,13 +1,10 @@
-// Import Link dari Next.js untuk navigasi antar halaman
-import Link from "next/link";
+import Link from "next/link"; // Import Link dari Next.js untuk navigasi antar halaman
 
 // Import Icon dari React Icons untuk ikon panah kanan pada tombol "View More"
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { Playfair_Display } from "next/font/google";
 
-// Import komponen ImageSlide yang akan menampilkan slider gambar untuk album-album yang ditampilkan di carousel ini
-import ImageSlide from "./client/ImageSlide";
-
+import ImageSlide from "./client/ImageSlide"; // Import komponen ImageSlide yang akan menampilkan slider gambar untuk album-album yang ditampilkan di carousel ini
 
 // Import font Playfair Display dengan varian bold dan regular untuk digunakan pada judul "Albums" dan tombol "View More"
 const playfairDisplayBold = Playfair_Display({

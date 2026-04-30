@@ -1,16 +1,14 @@
-// Import komponen FooterClient yang akan menampilkan bagian klien pada footer, serta Image dan Link dari Next.js untuk optimasi gambar dan navigasi antar halaman  
-import FooterClient from "./client/FooterClient";
+import FooterClient from "./client/FooterClient"; // Import komponen FooterClient yang akan menampilkan bagian klien pada footer, serta Image dan Link dari Next.js untuk optimasi gambar dan navigasi antar halaman
 
 // Import Image dan Link dari Next.js untuk optimasi gambar dan navigasi antar halaman
 import Image from "next/image";
 import Link from "next/link";
 
-// Import gambar logo O2H untuk ditampilkan di bagian kiri footer
-import O2HLogo from "./../../public/img/logos/O2H_Logos_1.png";
+import O2HLogo from "./../../public/img/logos/O2H_Logos_1.png"; // Import gambar logo O2H untuk ditampilkan di bagian kiri footer
 
 // Tipe untuk properti Footer yang menerima varian tema (dark, yellow, light) dengan nilai default "dark"
 type FooterProps = {
-  variant?: "dark" | "yellow" | "light";
+  variant?: "dark" | "yellow" | "light"; // Properti variant untuk menentukan tema warna footer, dengan opsi "dark", "yellow", atau "light"
 };
 
 // Komponen Footer untuk menampilkan bagian bawah halaman dengan berbagai varian tema yang dapat dipilih melalui properti variant, serta menampilkan logo, link, dan informasi hak cipta
@@ -39,8 +37,7 @@ export default function Footer({ variant = "yellow" }: FooterProps) {
     },
   };
 
-  // Mendapatkan kelas CSS yang sesuai dengan varian tema yang dipilih dari objek variants
-  const current = variants[variant];
+  const current = variants[variant]; // Mendapatkan kelas CSS yang sesuai dengan varian tema yang dipilih dari objek variants
 
   return (
     // Footer utama dengan kelas CSS yang dinamis berdasarkan varian tema yang dipilih, serta padding dan tata letak grid untuk mengatur konten di dalamnya

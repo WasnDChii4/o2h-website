@@ -1,13 +1,10 @@
 "use client";
 
-// Import hooks React
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"; // Import hooks React
 
-// Import Image dari Next.js
-import Image from "next/image";
+import Image from "next/image"; // Import Image dari Next.js
 
-//Import font dari Google Fonts
-import { Bungee, Playfair_Display } from "next/font/google";
+import { Bungee, Playfair_Display } from "next/font/google"; // Import font dari Google Fonts
 
 // Konfigurasi font Bungee dan Playfair Display
 const bungee = Bungee({
@@ -21,14 +18,11 @@ const playfairDisplayRegular = Playfair_Display({
 
 // Komponen utama Hero Section
 export default function Hero() {
-  // State untuk mengontrol efek blur dan scale pada gambar latar belakang
-  const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false); // State untuk mengontrol efek blur dan scale pada gambar latar belakang
 
-  // State untuk menyimpan teks yang akan ditampilkan dengan efek mengetik
-  const [displayText, setDisplayText] = useState("");
+  const [displayText, setDisplayText] = useState(""); // State untuk menyimpan teks yang akan ditampilkan dengan efek mengetik
 
-  // Teks lengkap yang akan ditampilkan dengan efek mengetik
-  const fullText = "Together in Every Step";
+  const fullText = "Together in Every Step"; // Teks lengkap yang akan ditampilkan dengan efek mengetik
 
   const [showContentUtama, setShowContentUtama] = useState(false); // State untuk mengontrol apakah teks konten sudah ditampilkan atau belum
 
@@ -40,7 +34,7 @@ export default function Hero() {
 
   // useEffect untuk memulai efek mengetik setelah komponen ter-mount
   useEffect(() => {
-    setIsMounted(true);
+    setIsMounted(true); // Setelah komponen ter-mount, atur isMounted ke true untuk memicu efek transisi pada gambar latar belakang
 
     // Mulai efek mengetik setelah delay 1.5 detik
     const startTyping = setTimeout(() => {

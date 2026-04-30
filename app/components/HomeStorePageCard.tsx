@@ -1,17 +1,11 @@
-// Import Link dari Next.js untuk navigasi antar halaman
-import Link from "next/link";
+import Link from "next/link"; // Import Link dari Next.js untuk navigasi antar halaman
 
-// Import headers dari Next.js untuk mendapatkan informasi header dari permintaan HTTP, yang akan digunakan untuk menentukan host saat melakukan fetch data produk dari API
-import { headers } from "next/headers";
+import { headers } from "next/headers"; // Import headers dari Next.js untuk mendapatkan informasi header dari permintaan HTTP, yang akan digunakan untuk menentukan host saat melakukan fetch data produk dari API
 
-// Import font Playfair Display dengan varian bold dan regular untuk digunakan pada judul "Store" dan tombol "View More"
-import { Playfair_Display } from "next/font/google";
+import { Playfair_Display } from "next/font/google"; // Import font Playfair Display dengan varian bold dan regular untuk digunakan pada judul "Store" dan tombol "View More"
+import { FaArrowAltCircleRight } from "react-icons/fa"; // Import Icon dari React Icons untuk ikon panah kanan pada tombol "View More"
 
-// Import Icon dari React Icons untuk ikon panah kanan pada tombol "View More"
-import { FaArrowAltCircleRight } from "react-icons/fa";
-
-// Import komponen HomeProductCard yang akan menampilkan kartu produk untuk setiap produk yang diambil dari API, dengan properti yang sesuai seperti id, title, price, image, dan sold
-import HomeProductCard from "./client/HomeProductCard";
+import HomeProductCard from "./client/HomeProductCard"; // Import komponen HomeProductCard yang akan menampilkan kartu produk untuk setiap produk yang diambil dari API, dengan properti yang sesuai seperti id, title, price, image, dan sold
 
 // Tipe untuk produk yang akan diambil dari API, dengan properti id, title, price, image, dan sold yang sesuai dengan data yang diharapkan dari API
 type Product = {
@@ -34,27 +28,23 @@ const playfairDisplayRegular = Playfair_Display({
 
 // Komponen HomeStorePageCard untuk menampilkan bagian toko di halaman utama, dengan judul "Store", tombol "View More" yang mengarah ke halaman toko, dan daftar produk yang diambil dari API dan ditampilkan menggunakan komponen HomeProductCard
 export default async function HomeStorePageCard() {
-  // Mendapatkan header dari permintaan HTTP untuk menentukan host saat melakukan fetch data produk dari API
-  const headersList = await headers();
+  const headersList = await headers(); // Mendapatkan header dari permintaan HTTP untuk menentukan host saat melakukan fetch data produk dari API
 
-  // Mendapatkan nilai host dari header yang diperoleh, yang akan digunakan untuk membangun URL saat melakukan fetch data produk dari API
-  const host = headersList.get("host");
+  const host = headersList.get("host"); // Mendapatkan nilai host dari header yang diperoleh, yang akan digunakan untuk membangun URL saat melakukan fetch data produk dari API
 
   // Melakukan fetch data produk dari API menggunakan URL yang dibangun dengan host yang diperoleh dari header, serta mengatur cache menjadi "no-store" untuk memastikan data yang diambil selalu terbaru
   const res = await fetch(`http://${host}/api/products`, {
-    cache: "no-store",
+    cache: "no-store", // Mengatur cache menjadi "no-store" untuk memastikan data yang diambil selalu terbaru setiap kali halaman dimuat atau pengguna melakukan pencarian, sehingga daftar produk yang ditampilkan di bagian toko akan selalu mencerminkan data produk terbaru yang tersedia di API
   });
 
   // Jika respons dari API tidak berhasil (res.ok adalah false), maka akan melempar error dengan pesan "Failed to fetch products" untuk menangani kasus ketika data produk tidak dapat diambil dari API
   if (!res.ok) {
-    throw new Error("Failed to fetch products");
+    throw new Error("Failed to fetch products"); // Melempar error dengan pesan "Failed to fetch products" jika respons dari API tidak berhasil, yang akan membantu dalam proses debugging dan memberikan informasi yang jelas tentang masalah yang terjadi saat mengambil data produk dari API untuk ditampilkan di bagian toko
   }
 
-  // Mengambil data produk dari respons API dalam format JSON dan menyimpannya dalam variabel productsData, yang akan digunakan untuk menampilkan daftar produk di bagian toko
-  const productsData: Product[] = await res.json();
+  const productsData: Product[] = await res.json(); // Mengambil data produk dari respons API dalam format JSON dan menyimpannya dalam variabel productsData, yang akan digunakan untuk menampilkan daftar produk di bagian toko
 
-  // Mengambil 18 produk secara acak dari data produk yang diambil dari API dengan menggunakan metode sort untuk mengacak urutan produk dan slice untuk mengambil 18 produk pertama dari array yang sudah diacak, dan menyimpannya dalam variabel limitedRandomProducts yang akan digunakan untuk menampilkan daftar produk di bagian toko
-  const limitedRandomProducts = [...productsData].sort(() => Math.random() - 0.5).slice(0, 18);
+  const limitedRandomProducts = [...productsData].sort(() => Math.random() - 0.5).slice(0, 18); // Mengambil 18 produk secara acak dari data produk yang diambil dari API dengan menggunakan metode sort untuk mengacak urutan produk dan slice untuk mengambil 18 produk pertama dari array yang sudah diacak, dan menyimpannya dalam variabel limitedRandomProducts yang akan digunakan untuk menampilkan daftar produk di bagian toko
 
   return (
     // Section utama untuk bagian toko dengan padding vertikal

@@ -1,34 +1,35 @@
 "use client"
 
-import { FaSearch } from "react-icons/fa";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { FaSearch } from "react-icons/fa"; // Import ikon pencarian dari react-icons untuk digunakan di tombol pencarian
+
+import { useState, useEffect } from "react"; // Import React Hooks useState dan useEffect untuk mengelola state input pencarian dan efek samping saat defaultSearch berubah
+import { useRouter } from "next/navigation"; // Import useRouter dari Next.js untuk navigasi programatik ke halaman hasil pencarian setelah pengguna melakukan pencarian
 
 export default function SearchStore({ defaultSearch = "" }: any) {
   const router = useRouter(); // Hook untuk navigasi programatik ke halaman lain
-  const [inputValue, setinputValue] = useState(defaultSearch);
+  const [inputValue, setinputValue] = useState(defaultSearch); // State untuk menyimpan nilai input pencarian, diinisialisasi dengan defaultSearch yang diterima sebagai prop, sehingga jika ada nilai default yang diberikan, input akan langsung terisi dengan nilai tersebut
 
   // Fungsi untuk menangani pencarian, membersihkan input, dan mengarahkan ke halaman hasil pencarian
   const handleSearch = () => {
-    const clean = inputValue.trim().toLowerCase();
+    const clean = inputValue.trim().toLowerCase(); // Membersihkan input dengan menghapus spasi di awal dan akhir, serta mengubah ke huruf kecil untuk konsistensi pencarian
 
-    if (!clean) return;
+    if (!clean) return; // Jika input kosong setelah dibersihkan, jangan lakukan apa-apa
 
-    // Redirect ke halaman search dengan query parameter keyword yang sudah di-encode untuk menghindari masalah karakter khusus
-    router.push(`/stores/search?keyword=${encodeURIComponent(clean)}`);
+    router.push(`/stores/search?keyword=${encodeURIComponent(clean)}`); // Redirect ke halaman search dengan query parameter keyword yang sudah di-encode untuk menghindari masalah karakter khusus
   };
 
   // Fungsi untuk menangani event keydown pada input pencarian, jika tombol Enter ditekan maka akan memanggil fungsi handleSearch
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    // Jika tombol yang ditekan adalah "Enter", maka panggil fungsi handleSearch untuk melakukan pencarian
     if (e.key === "Enter") {
-      handleSearch();
+      handleSearch(); // Memanggil fungsi handleSearch untuk melakukan pencarian ketika tombol Enter ditekan
     }
   };
 
   // useEffect untuk memperbarui nilai input pencarian setiap kali defaultSearch berubah, sehingga input akan selalu sinkron dengan nilai default yang diberikan
   useEffect(() => {
-    setinputValue(defaultSearch);
-  }, [defaultSearch]);
+    setinputValue(defaultSearch); // Memperbarui nilai input pencarian dengan defaultSearch setiap kali defaultSearch berubah, sehingga input akan selalu mencerminkan nilai default yang diberikan
+  }, [defaultSearch]); // Menambahkan defaultSearch sebagai dependency untuk memastikan useEffect dijalankan setiap kali defaultSearch berubah
 
   return (
     <div className="flex w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">

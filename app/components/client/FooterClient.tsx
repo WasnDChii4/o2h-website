@@ -1,10 +1,8 @@
 "use client";
 
-// Import icon sosial media dari react-icon
-import { FaTiktok, FaXTwitter, FaYoutube, FaInstagram } from "react-icons/fa6";
+import { FaTiktok, FaXTwitter, FaYoutube, FaInstagram } from "react-icons/fa6"; // Import icon sosial media dari react-icon
 
-// Import Link dari Next.js untuk navigasi
-import Link from "next/link";
+import Link from "next/link"; // Import icon sosial media dari react-icon
 
 // Komponen FooterClient untuk menampilkan ikon sosial media dengan tautan
 export default function FooterClient() {

@@ -1,13 +1,10 @@
 "use client";
 
-// Import Image dari Next.js 
-import Image from "next/image";
+import Image from "next/image"; // Import Image dari Next.js 
 
-// Import Swiper dan slide
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper dan slide
 
-// Import module tambahan Swiper
-import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
+import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules"; // Import module tambahan Swiper
 
 // Import style Swiper
 import "swiper/css";

@@ -1,8 +1,6 @@
-// Import Link dari Next.js untuk navigasi antar halaman
-import Link from "next/link";
+import Link from "next/link"; // Import Link dari Next.js untuk navigasi antar halaman
 
-// Import headers dari Next.js untuk mendapatkan informasi header dari permintaan HTTP, yang akan digunakan untuk menentukan host saat melakukan fetch data berita dari API 
-import { headers } from "next/headers";
+import { headers } from "next/headers"; // Import headers dari Next.js untuk mendapatkan informasi header dari permintaan HTTP, yang akan digunakan untuk menentukan host saat melakukan fetch data berita dari API 
 
 // Import Icon dari React Icons untuk ikon panah kanan pada tombol "View More" dan setiap item berita, serta font Playfair Display dengan varian bold dan regular untuk digunakan pada judul "Latest News", tanggal, judul berita, dan tombol "View More"
 import { FaArrowAltCircleRight } from "react-icons/fa";
@@ -28,27 +26,23 @@ const playfairDisplayRegular = Playfair_Display({
 
 // Komponen LatestNews untuk menampilkan bagian berita terbaru di halaman utama, dengan judul "Latest News", tombol "View More" yang mengarah ke halaman berita, dan daftar berita yang diambil dari API dan ditampilkan dengan tanggal, judul, dan ikon panah kanan untuk setiap item berita
 export default async function LatestNews() {
-  // Mendapatkan header dari permintaan HTTP untuk menentukan host saat melakukan fetch data berita dari API
-  const headersList = await headers();
+  const headersList = await headers(); // Mendapatkan header dari permintaan HTTP untuk menentukan host saat melakukan fetch data berita dari API
 
-  // Mendapatkan nilai host dari header yang diperoleh, yang akan digunakan untuk membangun URL saat melakukan fetch data berita dari API
-  const host = headersList.get("host");
+  const host = headersList.get("host"); // Mendapatkan nilai host dari header yang diperoleh, yang akan digunakan untuk membangun URL saat melakukan fetch data berita dari API
 
   // Melakukan fetch data berita dari API menggunakan URL yang dibangun dengan host yang diperoleh dari header, serta mengatur cache menjadi "no-store" untuk memastikan data yang diambil selalu terbaru
   const res = await fetch(`http://${host}/api/news`, {
-    cache: "no-store",
+    cache: "no-store", // Mengatur cache menjadi "no-store" untuk memastikan data yang diambil selalu terbaru setiap kali halaman dimuat, sehingga daftar berita yang ditampilkan di bagian berita terbaru akan selalu mencerminkan data berita terbaru yang tersedia di API
   });
 
   // Jika respons dari API tidak berhasil (res.ok adalah false), maka akan melempar error dengan pesan "Failed to fetch news" untuk menangani kasus ketika data berita tidak dapat diambil dari API
   if (!res.ok) {
-    throw new Error("Failed to fetch news");
+    throw new Error("Failed to fetch news"); // Melempar error dengan pesan "Failed to fetch news" jika respons dari API tidak berhasil, yang akan membantu dalam proses debugging dan memberikan informasi yang jelas tentang masalah yang terjadi saat mengambil data berita dari API untuk ditampilkan di bagian berita terbaru
   }
   
-  // Mengambil data berita dari respons API dalam format JSON dan menyimpannya dalam variabel newsData, yang akan digunakan untuk menampilkan daftar berita di bagian berita terbaru
-  const newsData: News[] = await res.json();
+  const newsData: News[] = await res.json(); // Mengambil data berita dari respons API dalam format JSON dan menyimpannya dalam variabel newsData, yang akan digunakan untuk menampilkan daftar berita di bagian berita terbaru
 
-  // Mengambil 5 berita terbaru dari data berita yang diambil dari API dengan menggunakan metode slice untuk mengambil elemen pertama hingga kelima dari array newsData, dan menyimpannya dalam variabel latestNews yang akan digunakan untuk menampilkan daftar berita terbaru di bagian berita terbaru
-  const latestNews = newsData.slice(0, 5);
+  const latestNews = newsData.slice(0, 5); // Mengambil 5 berita terbaru dari data berita yang diambil dari API dengan menggunakan metode slice untuk mengambil elemen pertama hingga kelima dari array newsData, dan menyimpannya dalam variabel latestNews yang akan digunakan untuk menampilkan daftar berita terbaru di bagian berita terbaru
 
   return (
     // Section utama untuk bagian berita terbaru dengan padding vertikal
