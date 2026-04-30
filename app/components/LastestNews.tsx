@@ -42,7 +42,7 @@ export default async function LatestNews() {
   
   const newsData: News[] = await res.json(); // Mengambil data berita dari respons API dalam format JSON dan menyimpannya dalam variabel newsData, yang akan digunakan untuk menampilkan daftar berita di bagian berita terbaru
 
-  const latestNews = newsData.slice(0, 5); // Mengambil 5 berita terbaru dari data berita yang diambil dari API dengan menggunakan metode slice untuk mengambil elemen pertama hingga kelima dari array newsData, dan menyimpannya dalam variabel latestNews yang akan digunakan untuk menampilkan daftar berita terbaru di bagian berita terbaru
+  const latestNews = newsData.slice(0, 6); // Mengambil 5 berita terbaru dari data berita yang diambil dari API dengan menggunakan metode slice untuk mengambil elemen pertama hingga kelima dari array newsData, dan menyimpannya dalam variabel latestNews yang akan digunakan untuk menampilkan daftar berita terbaru di bagian berita terbaru
 
   return (
     // Section utama untuk bagian berita terbaru dengan padding vertikal
