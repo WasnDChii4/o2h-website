@@ -68,7 +68,7 @@ export default function AlbumCarouselClient() {
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-5"
           }`}
-          style={{ transitionDelay: showContent ? "500ms" : "0ms" }}
+          style={{ transitionDelay: showContent ? "300ms" : "0ms" }}
         >
           <ImageSlide />
         </div>
