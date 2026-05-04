@@ -5,7 +5,7 @@ import Link from "next/link"; // Import Link dari Next.js untuk navigasi antar h
 import { useState } from "react"; // Import React Hooks dan Router untuk navigasi
 import { FaShoppingCart } from "react-icons/fa"; // Import ikon keranjang belanja dari react-icons untuk digunakan dalam tampilan
 import { IoIosNotifications } from "react-icons/io"; // Import ikon notifikasi dari react-icons untuk digunakan dalam tampilan
-import { Playfair_Display } from "next/font/google"; // Import font Playfair Display dari Google Fonts untuk digunakan dalam tampilan teks
+import { Playfair_Display, Yesteryear } from "next/font/google"; // Import font Playfair Display dari Google Fonts untuk digunakan dalam tampilan teks
 import AvatarSementara from "../../../public/img/backgrounds/O2H_ImagesHero_2.jpg"; // Import gambar avatar sementara untuk digunakan dalam dropdown profil
 import O2HLogo from "../../../public/img/logos/O2H_Logos_1.png"; // Import gambar logo O2H untuk digunakan dalam navbar
 
@@ -18,6 +18,11 @@ const playfairDisplayBold = Playfair_Display({
   weight: "700",
   subsets: ["latin"],
 });
+
+const yesteryear = Yesteryear({
+  weight: "400",
+  subsets: ["latin"],
+})
 
 // Komponen NavbarClient untuk menampilkan navbar dengan fitur pencarian, ikon, dan dropdown profil
 export default function NavbarClient() {
@@ -60,7 +65,7 @@ export default function NavbarClient() {
 
         {/* Tengah (Search Bar Desktop) */}
         <div className="navbar-center hidden lg:flex">
-          <h1 className={`text-2xl ${playfairDisplayBold.className}`}>
+          <h1 className={`text-2xl ${yesteryear.className}`}>
             O2H Website
           </h1>
         </div>
