@@ -107,6 +107,7 @@ export default function Hero() {
           {/* Button CTA */}
           <button
             onClick={handleScrollButton}
+            disabled={!showContentUtama}
             className={`btn bg-yellow-400 hover:bg-yellow-500 active:bg-yellow-600 text-black font-bold rounded-xl transform-gpu transition-all duration-700 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               showContentUtama
                 ? "opacity-100 translate-y-0"
