@@ -1,19 +1,13 @@
 "use client";
 
-// Import Image dan Link dari Next.js untuk optimasi gambar
-import Image from "next/image";
-import Link from "next/link";
-
+import Image from "next/image"; // Import Image dari Next.js untuk menampilkan gambar dengan optimasi otomatis
+import Link from "next/link"; // Import Link dari Next.js untuk navigasi antar halaman
 import { useState } from "react"; // Import React Hooks dan Router untuk navigasi
-
-// Import Icon dari React Icons untuk ikon pencarian, keranjang, dan notifikasi
-import { FaShoppingCart } from "react-icons/fa";
-import { IoIosNotifications } from "react-icons/io";
-import { Playfair_Display } from "next/font/google";
-
-// Import gambar untuk avatar sementara dan logo O2H
-import AvatarSementara from "../../../public/img/backgrounds/O2H_ImagesHero_2.jpg";
-import O2HLogo from "../../../public/img/logos/O2H_Logos_1.png";
+import { FaShoppingCart } from "react-icons/fa"; // Import ikon keranjang belanja dari react-icons untuk digunakan dalam tampilan
+import { IoIosNotifications } from "react-icons/io"; // Import ikon notifikasi dari react-icons untuk digunakan dalam tampilan
+import { Playfair_Display } from "next/font/google"; // Import font Playfair Display dari Google Fonts untuk digunakan dalam tampilan teks
+import AvatarSementara from "../../../public/img/backgrounds/O2H_ImagesHero_2.jpg"; // Import gambar avatar sementara untuk digunakan dalam dropdown profil
+import O2HLogo from "../../../public/img/logos/O2H_Logos_1.png"; // Import gambar logo O2H untuk digunakan dalam navbar
 
 // Import font Playfair Display dengan varian regular dan bold untuk digunakan di navbar dan dropdown
 const playfairDisplayRegular = Playfair_Display({
@@ -37,7 +31,7 @@ export default function NavbarClient() {
         <div className="navbar-start gap-0.5">
           {/* Button Sidebar */}
           <button
-            onClick={() => setOpen(true)}
+            onClick={() => setOpen(true)} // Klik untuk membuka sidebar
             aria-label="Open menu"
             className="p-2 rounded-full hover:bg-yellow-300 active:bg-yellow-500 focus:outline-none transition"
           >
@@ -66,7 +60,9 @@ export default function NavbarClient() {
 
         {/* Tengah (Search Bar Desktop) */}
         <div className="navbar-center hidden lg:flex">
-          <h1 className={`text-2xl ${playfairDisplayBold.className}`}>O2H Website</h1>
+          <h1 className={`text-2xl ${playfairDisplayBold.className}`}>
+            O2H Website
+          </h1>
         </div>
 
         {/* Kanan (Icon & Profile) */}
@@ -128,7 +124,7 @@ export default function NavbarClient() {
       </div>
 
       {/* Overlay (Background gelap saat sidebar dibuka) */}
-      {open && (
+      {open && ( // Hanya tampilkan overlay jika sidebar terbuka (open === true)
         <div
           className="fixed inset-0 bg-black/50 z-40"
           onClick={() => setOpen(false)} // Klik untuk tutup sidebar
@@ -138,14 +134,14 @@ export default function NavbarClient() {
       {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 h-full w-64 bg-yellow-50 text-black z-50 transform transition-transform duration-300 ease-out ${
-          open ? "translate-x-0" : "-translate-x-full"
+          open ? "translate-x-0" : "-translate-x-full" // Jika open true, sidebar berada di posisi normal (translate-x-0), jika false maka sidebar tersembunyi di sebelah kiri (translate-x-full)
         }`}
       >
         {/* Header Sidebar */}
         <div className="flex items-center gap-2 px-4 py-3 border-b border-yellow-400">
           {/* Button Close */}
           <button
-            onClick={() => setOpen(false)}
+            onClick={() => setOpen(false)} // Klik untuk menutup sidebar
             aria-label="Close menu"
             className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-yellow-400 active:bg-yellow-500 focus:outline-none transition text-lg font-bold"
           >

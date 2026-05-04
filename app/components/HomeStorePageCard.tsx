@@ -1,10 +1,7 @@
 import Link from "next/link"; // Import Link dari Next.js untuk navigasi antar halaman
-
 import { headers } from "next/headers"; // Import headers dari Next.js untuk mendapatkan informasi header dari permintaan HTTP, yang akan digunakan untuk menentukan host saat melakukan fetch data produk dari API
-
 import { Playfair_Display } from "next/font/google"; // Import font Playfair Display dengan varian bold dan regular untuk digunakan pada judul "Store" dan tombol "View More"
 import { FaArrowAltCircleRight } from "react-icons/fa"; // Import Icon dari React Icons untuk ikon panah kanan pada tombol "View More"
-
 import HomeProductCard from "./client/HomeProductCard"; // Import komponen HomeProductCard yang akan menampilkan kartu produk untuk setiap produk yang diambil dari API, dengan properti yang sesuai seperti id, title, price, image, dan sold
 
 // Tipe untuk produk yang akan diambil dari API, dengan properti id, title, price, image, dan sold yang sesuai dengan data yang diharapkan dari API
@@ -72,10 +69,10 @@ export default async function HomeStorePageCard() {
         {/* Grid untuk menampilkan daftar produk dengan tata letak responsif yang menyesuaikan jumlah kolom berdasarkan ukuran layar, serta gap antara item grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
           {/* Melakukan iterasi pada data produk yang diambil dari API (productsData) dan untuk setiap produk, akan menampilkan komponen HomeProductCard dengan properti yang sesuai seperti id, title, price, image, dan sold, serta memberikan key yang unik untuk setiap item dalam daftar agar React dapat mengelola rendering dengan efisien */}
-          {limitedRandomProducts.map((product) => (
+          {limitedRandomProducts.map((product) => ( // Melakukan iterasi pada array limitedRandomProducts yang berisi produk-produk yang sudah diacak dan dibatasi jumlahnya, untuk menampilkan setiap produk menggunakan komponen HomeProductCard dengan properti yang sesuai seperti id, title, price, image, dan sold, serta memberikan key yang unik untuk setiap item dalam daftar berdasarkan id produk untuk membantu React dalam mengelola rendering dengan efisien
             <HomeProductCard
               key={product.id} // Memberikan key unik untuk setiap item dalam daftar produk berdasarkan id produk
-              product={product}
+              product={product} // Menyerahkan data produk sebagai properti ke komponen HomeProductCard untuk menampilkan informasi produk seperti title, price, image, dan sold
             />
           ))}
         </div>

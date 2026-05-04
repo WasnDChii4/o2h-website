@@ -1,7 +1,6 @@
 "use client"
 
 import { FaSearch } from "react-icons/fa"; // Import ikon pencarian dari react-icons untuk digunakan di tombol pencarian
-
 import { useState, useEffect } from "react"; // Import React Hooks useState dan useEffect untuk mengelola state input pencarian dan efek samping saat defaultSearch berubah
 import { useRouter } from "next/navigation"; // Import useRouter dari Next.js untuk navigasi programatik ke halaman hasil pencarian setelah pengguna melakukan pencarian
 
@@ -37,14 +36,14 @@ export default function SearchStore({ defaultSearch = "" }: any) {
       <input
         type="text"
         placeholder="Telusuri..."
-        value={inputValue}
-        onChange={(e) => setinputValue(e.target.value)}
-        onKeyDown={handleKeyDown}
+        value={inputValue}// Mengikat nilai input dengan state inputValue, sehingga setiap perubahan pada input akan memperbarui state dan sebaliknya, jika state berubah maka nilai input juga akan diperbarui
+        onChange={(e) => setinputValue(e.target.value)} // Menangani perubahan pada input dengan memperbarui state inputValue setiap kali pengguna mengetik di dalam input, sehingga state selalu mencerminkan nilai terbaru dari input
+        onKeyDown={handleKeyDown} // Menangani event keydown pada input, jika tombol Enter ditekan maka akan memanggil fungsi handleSearch untuk melakukan pencarian
         className=" input w-full rounded-l-full text-black bg-yellow-100 border border-yellow-500/30 focus:border-yellow-600 focus:outline-none"
       />
       {/* Button Search */}
       <button
-        onClick={handleSearch}
+        onClick={handleSearch} // Menangani klik pada tombol pencarian dengan memanggil fungsi handleSearch untuk melakukan pencarian
         className=" px-5 rounded-r-full bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 border border-yellow-500/30 transition"
       >
         <FaSearch size={20} />

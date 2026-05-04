@@ -1,9 +1,7 @@
 "use client";
 
 import Image from "next/image"; // Import Image dari Next.js 
-
 import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper dan slide
-
 import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules"; // Import module tambahan Swiper
 
 // Import style Swiper
@@ -19,8 +17,8 @@ export default function ImageSlide() {
       {/* Swiper (slider utama) */}
       <Swiper
         effect="coverflow"
-        grabCursor={true}
-        modules={[EffectCoverflow, Pagination, Autoplay]}
+        grabCursor={true} // Ubah kursor menjadi tangan saat hover
+        modules={[EffectCoverflow, Pagination, Autoplay]} // Aktifkan module coverflow, pagination, dan autoplay
         // Autoplay dengan delay 3000ms dan tidak berhenti saat pengguna berinteraksi dengan slider
         autoplay={{
           delay: 3000,

@@ -1,9 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react"; // Import hooks React
-
 import Image from "next/image"; // Import Image dari Next.js
-
 import { Bungee, Playfair_Display } from "next/font/google"; // Import font dari Google Fonts
 
 // Konfigurasi font Bungee dan Playfair Display
@@ -67,14 +65,13 @@ export default function Hero() {
   return (
     // Container utama untuk hero section dengan gambar latar belakang, overlay, dan konten teks
     <div className="hero min-h-screen relative overflow-hidden">
-      {/* Background Image */}
       <Image
         src="/img/backgrounds/O2H_ImagesHero_2.jpg"
         alt="Hero background"
-        fill
+        fill // Menggunakan fill untuk membuat gambar mengisi seluruh container hero
         priority
         className={`object-cover transition-all duration-1500 ease-in-out ${
-          isMounted ? "blur-0 scale-100" : "blur-lg scale-105"
+          isMounted ? "blur-0 scale-100" : "blur-lg scale-105" // Efek blur dan scale pada gambar latar belakang yang berubah saat isMounted berubah
         }`}
       />
 
@@ -94,7 +91,7 @@ export default function Hero() {
           {/* Deskripsi */}
           <p
             className={`mb-5 md:text-xl transform-gpu transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-              showContentUtama
+              showContentUtama // Tampilkan teks deskripsi dengan efek transisi setelah showContentUtama menjadi true, dengan perubahan opacity dan translate-y untuk efek muncul dari bawah
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-5"
             } ${playfairDisplayRegular.className}`}
@@ -106,10 +103,10 @@ export default function Hero() {
           </p>
           {/* Button CTA */}
           <button
-            onClick={handleScrollButton}
-            disabled={!showContentUtama}
+            onClick={handleScrollButton} // Menangani klik pada tombol untuk menggulir ke bagian "Latest News"
+            disabled={!showContentUtama} // Menonaktifkan tombol sampai konten utama ditampilkan untuk memastikan pengguna tidak dapat mengklik tombol sebelum teks utama muncul
             className={`btn bg-yellow-400 hover:bg-yellow-500 active:bg-yellow-600 text-black font-bold rounded-xl transform-gpu transition-all duration-700 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-              showContentUtama
+              showContentUtama // Tampilkan tombol dengan efek transisi setelah showContentUtama menjadi true, dengan perubahan opacity dan translate-y untuk efek muncul dari bawah, serta delay untuk memberikan efek yang lebih halus
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-5"
             } ${bungee.className}`}

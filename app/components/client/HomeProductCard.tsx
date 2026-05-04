@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image"; // Import Image dari Next.js
-
 import { Playfair_Display } from "next/font/google"; // Import font Playfair Display dari Google Fonts
 
 

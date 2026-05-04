@@ -1,11 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react"; // Import hooks React
-
-// Import routing & image Next.js
-import Link from "next/link";
-import Image from "next/image";
-
+import Link from "next/link"; // Import Link dari Next.js untuk navigasi antar halaman
+import Image from "next/image"; // Import Image dari Next.js untuk menampilkan gambar logo
 import O2HLogo from "../../../public/img/logos/O2H_Logos_2.png"; // Import logo O2H untuk ditampilkan pada komponen FloatingLogo
 
 // Kompomen utama FloatingLogo
@@ -35,9 +32,9 @@ export default function FloatingLogo() {
       <Link href="/"> 
         {/* Gambar logo */}
         <Image
-          src={O2HLogo}
+          src={O2HLogo} // Sumber gambar logo yang diimpor
           alt="O2H Logo"
-          fill
+          fill // Menggunakan fill untuk membuat gambar mengisi seluruh container
           className="object-cover"
         />
       </Link>
