@@ -1,5 +1,5 @@
-import Navbar from "../components/client/NavbarClient";
-import FloatingLogo from "../components/client/FloatingLogo";
+import Navbar from "../components/Navbar";
+import FloatingLogo from "../components/FloatingLogo";
 
 export default function Members() {
   return (

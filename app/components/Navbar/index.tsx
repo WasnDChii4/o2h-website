@@ -25,7 +25,7 @@ const yesteryear = Yesteryear({
 })
 
 // Komponen NavbarClient untuk menampilkan navbar dengan fitur pencarian, ikon, dan dropdown profil
-export default function NavbarClient() {
+export default function Navbar() {
   const [open, setOpen] = useState(false); // State untuk mengontrol apakah sidebar terbuka atau tidak
 
   return (

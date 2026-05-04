@@ -1,6 +1,6 @@
-import Navbar from "../components/client/NavbarClient";
-import FloatingLogo from "../components/client/FloatingLogo";
-import SearchStore from "../components/client/SearchStore";
+import Navbar from "../components/Navbar";
+import FloatingLogo from "../components/FloatingLogo";
+import SearchStore from "../components/StoreHome/searchClient";
 
 export default function Stores() {
   return (
