@@ -1,7 +1,7 @@
-import FooterClient from "./client/FooterClient"; // Import komponen FooterClient yang akan menampilkan bagian klien pada footer, serta Image dan Link dari Next.js untuk optimasi gambar dan navigasi antar halaman
+import FooterClient from "./client"; // Import komponen FooterClient yang akan menampilkan bagian klien pada footer, serta Image dan Link dari Next.js untuk optimasi gambar dan navigasi antar halaman
 import Image from "next/image"; // Import Image dari Next.js untuk optimasi gambar pada logo yang akan ditampilkan di bagian kiri footer
 import Link from "next/link"; // Import Link dari Next.js untuk navigasi antar halaman ketika logo di klik pada bagian kiri footer
-import O2HLogo from "./../../public/img/logos/O2H_Logos_1.png"; // Import gambar logo O2H untuk ditampilkan di bagian kiri footer
+import O2HLogo from "./../../../public/img/logos/O2H_Logos_1.png"; // Import gambar logo O2H untuk ditampilkan di bagian kiri footer
 
 // Tipe untuk properti Footer yang menerima varian tema (dark, yellow, light) dengan nilai default "dark"
 type FooterProps = {

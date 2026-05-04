@@ -2,7 +2,7 @@ import Link from "next/link"; // Import Link dari Next.js untuk navigasi antar h
 import { headers } from "next/headers"; // Import headers dari Next.js untuk mendapatkan informasi header dari permintaan HTTP, yang akan digunakan untuk menentukan host saat melakukan fetch data produk dari API
 import { Playfair_Display } from "next/font/google"; // Import font Playfair Display dengan varian bold dan regular untuk digunakan pada judul "Store" dan tombol "View More"
 import { FaArrowAltCircleRight } from "react-icons/fa"; // Import Icon dari React Icons untuk ikon panah kanan pada tombol "View More"
-import HomeProductCard from "./client/HomeProductCard"; // Import komponen HomeProductCard yang akan menampilkan kartu produk untuk setiap produk yang diambil dari API, dengan properti yang sesuai seperti id, title, price, image, dan sold
+import HomeProductCard from "./cardClient"; // Import komponen HomeProductCard yang akan menampilkan kartu produk untuk setiap produk yang diambil dari API, dengan properti yang sesuai seperti id, title, price, image, dan sold
 
 // Tipe untuk produk yang akan diambil dari API, dengan properti id, title, price, image, dan sold yang sesuai dengan data yang diharapkan dari API
 type Product = {

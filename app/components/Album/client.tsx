@@ -4,7 +4,7 @@ import Link from "next/link"; // Import Link dari Next.js untuk navigasi antar h
 import { useState, useRef, useEffect } from "react"; // Import hook useState, useRef, dan useEffect dari React untuk mengelola state dan efek samping
 import { FaArrowAltCircleRight } from "react-icons/fa"; // Import ikon panah dari react-icons untuk digunakan dalam tampilan
 import { Playfair_Display } from "next/font/google"; // Import font Playfair Display dari Google Fonts untuk digunakan dalam tampilan teks
-import ImageSlide from "./ImageSlide"; // Import komponen ImageSlide yang akan menampilkan carousel gambar untuk bagian Albums
+import ImageSlide from "./imageClient"; // Import komponen ImageSlide yang akan menampilkan carousel gambar untuk bagian Albums
 
 // Konfigurasi font Playfair Display untuk gaya teks yang berbeda (bold dan regular)
 const playfairDisplayBold = Playfair_Display({

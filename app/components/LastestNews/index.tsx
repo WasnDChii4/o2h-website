@@ -1,5 +1,5 @@
 import { headers } from "next/headers"; // Import headers dari Next.js untuk mendapatkan header dari permintaan HTTP, yang akan digunakan untuk menentukan host saat melakukan fetch data berita dari API
-import LatestNewsClient from "./client/LatestNewsClient"; // Import komponen LatestNewsClient yang akan menampilkan daftar berita terbaru dengan efek animasi saat muncul di viewport, dengan prop latestNews yang berisi array berita terbaru yang akan ditampilkan
+import LatestNewsClient from "./client"; // Import komponen LatestNewsClient yang akan menampilkan daftar berita terbaru dengan efek animasi saat muncul di viewport, dengan prop latestNews yang berisi array berita terbaru yang akan ditampilkan
 
 // Tipe data untuk berita, yang mencakup id, tanggal, judul, dan slug (URL) berita, yang akan digunakan untuk mendefinisikan tipe data dari berita yang diambil dari API dan ditampilkan di komponen LatestNewsClient
 type News = {
